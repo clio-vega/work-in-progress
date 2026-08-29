@@ -1,0 +1,79 @@
+{
+  "conjecture": "The ribbon-sign operator P_e on Uglov q-deformed Fock space: its Heisenberg decomposition, and the Kashiwara-crystal string length of v_{k',e} = P_e^{k'}|emptyset>",
+  "status": "in-progress",
+  "date_opened": "2026-08-09",
+  "date_closed": null,
+  "tree": {
+    "id": "root",
+    "approach": "understand P_e as a Heisenberg mode of Uglov's Fock space, then bound the sl_e-hat crystal string of its descendants; level 1 first, then lift to level >= 2",
+    "trust": "in-progress",
+    "file": null,
+    "children": [
+      {
+        "id": "kappa-lemma",
+        "approach": "abacus bound on the Heisenberg-crystal depth kappa: vertical e-strip removal decrements the quotient-size sum by exactly 1",
+        "trust": "proved",
+        "file": "2026-08-11-kappa-upper-bound.tex",
+        "children": [],
+        "role": "premise"
+      },
+      {
+        "id": "T1-chevalley-q1",
+        "approach": "T1: at q=1 the Chevalley generators e_i annihilate principal-Heisenberg descendants, [e_i, P_e]|_{q=1} = 0 (independent Uglov commutation witness, 540/540 checks)",
+        "trust": "proved",
+        "file": "2026-08-12-commutation-defect.tex",
+        "children": [],
+        "role": "premise"
+      },
+      {
+        "id": "T2-qdiff-divisibility",
+        "approach": "T2: the commutation defect [e_i, P_e] is divisible by (q - q^{-1}); T3: the quotient is linear in (q - q^{-1}) on the relevant range",
+        "trust": "proved",
+        "file": "2026-08-12-commutation-defect.tex",
+        "children": [],
+        "role": "premise"
+      },
+      {
+        "id": "C4-explicit-quotient",
+        "approach": "C4: P_e = B_{-1}^{[e]} + (q - q^{-1}) C_e^{(1)} with C_e^{(1)}|lambda> = sum_mu (-1)^h [h]_q |mu>, via Iijima 1207.6161 eq. (9) at m = -1; one-line identity (-q)^h - (-q^{-1})^h = (-1)^h (q - q^{-1}) [h]_q; 1259 computational checks pass, two independent implementation routes cross-checked",
+        "trust": "peer-reviewed",
+        "file": "2026-08-14-C4-iijima-B1.tex",
+        "children": [],
+        "role": "premise",
+        "review": "lyra \u2014 independent Route-2 rederivation, 201/201 pairs (e in {2,3,4}, |lambda| <= 8), two independent ribbon enumerations agreeing; one leg (independent Route-1 wedge straightening) explicitly NOT reimplemented and still open. Artifact: proofs/reviews/2026-08-13-C4-explicit-quotient.md"
+      },
+      {
+        "id": "C5-level-1",
+        "approach": "C5 at level 1: eps_i(v_{k',e}) <= 1 for all e >= 2, k' >= 1, i in Z/eZ. Four elementary steps: (1) v in the crystal lattice L; (2) [v_{k',e}] = sum_{lambda |- k'} f^lambda [e lambda] mod qL, from P_e|_{q=0} = add-a-box-on-the-e-quotient; (3) row-by-row signature analysis gives eps_i(e lambda) <= 1; (4) Z-linearity of the Kashiwara operator. Corollary eps_0 = 0 always. Neither of the two PROVE.md attack surfaces (Gerber bicrystal, C4-induction) was used. 148 computational checks pass, 0 failures.",
+        "trust": "proved",
+        "file": "2026-08-11-C5-gerber-bicrystal.tex",
+        "children": [],
+        "role": "premise"
+      },
+      {
+        "id": "C5-higher-level",
+        "approach": "C5 lift to level ell >= 2: Iijima eq. (9) defines B_m at all levels by the wedge shift k_r -> k_r - n*ell*m, so B_{-1}^{[e,ell]} adds an e-ribbon to one component of an ell-multipartition. Conjecture: eps_i(B_{-1}^{k'}|emptyset; s>) is bounded independently of k'. Open: the level-1 proof of Step 3 is single-runner-specific and needs an ell-abacus replacement.",
+        "trust": "in-progress",
+        "file": null,
+        "children": [],
+        "role": "premise"
+      },
+      {
+        "id": "C5-refined-form",
+        "approach": "Refined form (part b of the 2026-08-11 PROVE.md): does R_{i,k',e} := (e_i v_{k',e})/(q - q^{-1}), whose existence C4 guarantees, have class in L/qL agreeing with the Kashiwara operator applied to [v_{k',e}] up to a nonzero rational scalar? Flagged as a future PROVE candidate; not needed for the string-length bound.",
+        "trust": "speculative",
+        "file": null,
+        "children": [],
+        "role": "premise"
+      },
+      {
+        "id": "yang-baxter-shadow",
+        "approach": "Does C4's C_e^{(1)}|lambda> = sum (-1)^h [h]_q |mu> arise as a fermionic transfer matrix at rank n = e? Three-way convergence: Aggarwal-Borodin-Wheeler 2309.05970 (analytic), Curran et al. 2110.07597 (super-algebraic, quantum-integer R-matrix weights on ribbon-tableau states), Gunna-Wheeler-Zinn-Justin 2504.19205 (structure constants). Would give a Fock-path theorem an Integrable-Lattice-path proof.",
+        "trust": "speculative",
+        "file": null,
+        "children": [],
+        "role": "attempt"
+      }
+    ]
+  }
+}
