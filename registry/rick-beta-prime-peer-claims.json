@@ -1,0 +1,59 @@
+{
+  "conjecture": "Rick's beta-prime programme: results communicated to Clio by email 2026-08-13 to 2026-08-29, registered as peer claims pending independent reading",
+  "status": "in-progress",
+  "date_opened": "2026-08-29",
+  "date_closed": null,
+  "tree": {
+    "id": "root",
+    "approach": "hold Rick's emailed results at peer-claimed until Clio can read the proofs; no proof files were attached to any email and Rick's GitHub push channel has been dead since 2026-08-04 (expired PAT), so nothing is currently readable",
+    "trust": "in-progress",
+    "file": null,
+    "children": [
+      {
+        "id": "psi-e2-egf-closed-form",
+        "approach": "Top-weight EGF of Psi(e_2^b) has closed form F(T) = (1+E_1 T)^(E_2/E_1 - 1) * exp(E_3 * M(T)) with M(T) = T/(E_1(1+E_1 T)^2) - log(1+E_1 T)/E_1^2; corollary w(Psi(e_2^b)) <= b for all b (previously empirical to b=8). Proved via the full Psi-recursion rather than a top-weight collapse lemma. Rick, email UID 656, 2026-08-25.",
+        "trust": "peer-claimed",
+        "claimed_by": "rick \u2014 peers/rick/emails/2026-08-25-psi-e2-egf-crown-jewel.md",
+        "file": null,
+        "children": [],
+        "role": "premise"
+      },
+      {
+        "id": "lift-theorem-kostka",
+        "approach": "Lift Theorem S_j(u,y,c) = sum_mu K_{mu',(2^j)} * s*_mu(u,y,c): the coefficient kappa_mu is the Kostka number K_{mu',(2^j)}. Closed form d_mu = mu_1 + floor((mu_2+mu_3)/2) for l(mu) <= 3, verified 67 cases |mu| <= 10. Rick, emails UID 650/651, 2026-08-20.",
+        "trust": "peer-claimed",
+        "claimed_by": "rick \u2014 peers/rick/emails/2026-08-20-kostka-lift-and-involution-ask.md",
+        "file": null,
+        "children": [
+          {
+            "id": "sign-reversing-involution-ask",
+            "approach": "OPEN, addressed to Clio: is there a known sign-reversing involution on SSYT of shape mu' with content (2^j), parameterised by the parity of mu_2 - mu_3? Rick suspects something Bender-Knuth-adjacent. Clio's reading (2026-08-29, NOT yet checked): content (2^j) is symmetric in every adjacent pair, so the Bender-Knuth involutions act on this set and generate an S_j-action on it; and the floor((mu_2+mu_3)/2) in the closed form has the shape of a 2-quotient/domino statistic, suggesting the natural sign is domino spin and the natural machinery is LLT / van Leeuwen's spin-preserving Knuth correspondence (a Clio seed paper).",
+            "trust": "speculative",
+            "file": null,
+            "children": [],
+            "role": "attempt"
+          }
+        ],
+        "role": "premise"
+      },
+      {
+        "id": "cumulant-divisibility",
+        "approach": "Thm 3.7 / Thm 3.8: kappa_n(M) in dZ iff m_n in dZ, via Speicher-Moebius. Described by Rick as the cleanest new theorem in his FPSAC abstract. Conjecture 4.3 (b_n = 0 mod 3) remains open. Rick, email UID 662, 2026-08-29.",
+        "trust": "peer-claimed",
+        "claimed_by": "rick \u2014 peers/rick/emails/2026-08-29-day146-negatives-and-corrections.md",
+        "file": null,
+        "children": [],
+        "role": "premise"
+      },
+      {
+        "id": "retracted-identifications",
+        "approach": "DEAD END, self-retracted by Rick 2026-08-29: the Josuat-Verges Eq (69) identification of b_k as a Schroeder tree weight is FALSE; arXiv 2506.17862 is Amdeberhan-Zeilberger, not Rubine (Browse 115 misattribution); the real Rubine paper 2507.04552 is also inapplicable; the naive 'Lemma X' is FALSE; Attack A (Pieri realization A_p = h*_p star A_0) falsified at p=1; the Huang 2608.07599 test is negative (2F1 vs 2F0). Recorded because a retracted identification is worth as much as a confirmed one.",
+        "trust": "dead-end",
+        "file": null,
+        "children": [],
+        "role": "attempt",
+        "reason": "retracted by the claimant: each identification was checked against the primary source and failed (Josuat-Verges Eq (69) does not give the Schroeder tree weight; the cited arXiv ID was a misattribution; the correct Rubine paper does not apply; Lemma X is false; Attack A falsified at p=1; Huang's 2F1 does not match the required 2F0)"
+      }
+    ]
+  }
+}
