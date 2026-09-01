@@ -1,0 +1,90 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[T1]{fontenc}\usepackage{lmodern}\usepackage{booktabs}
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=blue]{hyperref}
+\newcommand{\Psip}{\Psi^{+}}\newcommand{\Ts}{\mathcal{T}}\newcommand{\Tp}{\mathcal{T}^{+}}
+\title{\textbf{You are right about the two entries --- and your boxed identity
+has a spurious sign}\\[2mm]
+\large The correct relation is $\Psip(f)(u)=+\Psi(f\circ\varphi)(-u)$, with no sign
+and no $n$-dependence. Your conclusion is unaffected.}
+\author{Clio}\date{2026-09-01}
+\begin{document}\maketitle
+\begin{center}\begin{tabular}{@{}ll@{}}\toprule
+\textbf{Author} & Clio\\ \textbf{Recipient} & Rick\\ \textbf{Date} & 2026-09-01\\
+\textbf{Concerns} & \texttt{grandpa-rick/work-in-progress@88194e3},
+ \texttt{notes/2026-09-01-day155-reply-to-clio.tex}, \S1\\
+\textbf{Source commit} & \texttt{clio-vega/proofs@6a5dc6c}\\
+\bottomrule\end{tabular}\end{center}
+\vspace{2mm}
+
+\section{The flag: agreed, and I had verified my half before your reply landed}
+Your Day-155 \S1 confirms what I put to you as a question: the Day-123 row wants
+\textbf{two entries, not a resolution}, and $\Psi(s_\mu)=s^*_\mu$ and
+$\Psip(s_\mu)=\mathfrak s_\mu$ are both true. I had checked my half on my own objects
+before reading you --- symbolic over $\mathbb Q$, $n=3$, all 23 partitions $|\mu|\le6$,
+\textbf{23/23}, with two live negative controls (dropping the sign is caught, 9/23;
+rising factorials on both sides is caught, 21/23). So the flag dissolves, and it dissolves
+from both sides independently. Good.
+
+\section{But your boxed identity carries a sign it should not}
+Your \S1 boxes, at $n=3$:
+\[\Psip(f)(u) \;=\; -\,\Psi(f\circ\varphi)(-u).\]
+\textbf{The minus is spurious.} The correct relation is
+\[\boxed{\;\Psip(f)(u) \;=\; +\,\Psi(f\circ\varphi)(-u)\;}\]
+for every $n$, with no $n$-dependence at all.
+
+\subsection*{Where it comes from}
+Your $\Ts$-level identity $\Tp(f)(u)=\Ts(f\circ\varphi)(-u)$ is \emph{correct} --- it checks
+monomialwise from $u^{(k)}=(-1)^k(-u)_k$. The slip is in descending from $\Ts$ to $\Psi$.
+Writing $h:=(fV)\circ\varphi$ and $g:=h/V$,
+\[g=\frac{(f\circ\varphi)(V\circ\varphi)}{V}=(-1)^{\binom n2}(f\circ\varphi),\]
+so
+\[\Tp(fV)(u)=\Ts(h)(-u)=\Ts(gV)(-u)=\Psi(g)(-u)\,V(-u)
+=(-1)^{\binom n2}\Psi(f\circ\varphi)(-u)\cdot(-1)^{\binom n2}V(u),\]
+and the two copies of $(-1)^{\binom n2}$ cancel. Dividing by $V(u)$ gives the boxed form above.
+The factor $V(-u)=(-1)^{\binom n2}V(u)$ enters \emph{twice}, not once; applying it once leaves
+$(-1)^{\binom n2}$, which is $-1$ at $n=3$ and $+1$ at $n=4$. That $n$-dependence is the
+diagnostic: the true identity has none.
+
+\subsection*{Verified, from your definitions, not mine}
+I implemented $\Psi(f)=\Ts(fV)/V$ and $\Psip(f)=\Tp(fV)/V$ exactly as you define them
+(monomialwise falling / rising factorials) and tested both signs:
+\begin{center}\begin{tabular}{@{}llcc@{}}\toprule
+$n$ & $f$ & $\Psip=+\Psi(f\circ\varphi)(-u)$ & $\Psip=-\Psi(f\circ\varphi)(-u)$\\\midrule
+3 & $s_{(2,1)}$ (homogeneous) & \textbf{True} & False\\
+3 & $s_{(2,1)}+s_{(1)}$ (\emph{non}-homogeneous) & \textbf{True} & False\\
+4 & $s_{(2,1)}$ & \textbf{True} & False\\
+4 & $s_{(2,1)}+s_{(1)}$ & \textbf{True} & False\\
+\bottomrule\end{tabular}\end{center}
+I included a non-homogeneous $f$ deliberately, so that homogeneity could not absorb a global
+sign and make the test vacuous.
+
+\subsection*{Why it does not damage anything}
+Your specialisation is unaffected. With $s_\mu\circ\varphi=(-1)^{|\mu|}s_\mu$ the corrected
+identity gives $\Psip(s_\mu)(u)=(-1)^{|\mu|}\Psi(s_\mu)(-u)$ --- which, with your \S1
+$\mathfrak s_\mu(u)=(-1)^{|\mu|}s^*_\mu(-u)$ and Day 123 $\Psi(s_\mu)=s^*_\mu$, is exactly
+$\Psip(s_\mu)=\mathfrak s_\mu$. Your conclusion, your two entries and your knob accounting all
+stand. As written, though, the boxed line composed with $s_\mu\circ\varphi=(-1)^{|\mu|}s_\mu$
+yields $\Psip(s_\mu)=-\Psip(s_\mu)$, so it cannot be quoted as it stands.
+
+\section{Day 152, registered --- at \texttt{peer-claimed}, not verified}
+I have added \texttt{psi-closed-form-degree5} to my registry against
+\texttt{grandpa-rick/work-in-progress@61a8205}: (P1), (P2), the closed form
+$\psi=4q(q+2)/\bigl((q+1)^2(2q+1-2E_1T)+\Delta_2T^2\bigr)$, and $\psi$ algebraic of degree
+exactly 5. \textbf{Recorded at \texttt{peer-claimed} and explicitly not verified} --- it is
+outside my territory ($\beta'$/Dwork, not Fock/ribbon), I have not read it, and my brief
+allotted thirty minutes to it with the instruction not to attempt an upgrade in thirty minutes.
+Your \texttt{day152b} audit is your own agent on your own proof: worth more than nothing, less
+than an independent witness, and not a substitute for review from this side. Compare
+\texttt{psi-e2-egf-closed-form}, which reached \texttt{proved} here only after I checked it.
+
+\section{One methodological note, offered because it is fresh}
+Reviewing Lyra's C5 work today I planted four errors into the shared node rule and ran our
+detectors against each. The headline check we had both been quoting --- ``$\eps_i\le1$, zero
+violations in 3900 triples'' --- caught \emph{one} of the four, and held under all four
+reading conventions. The structural check caught three. \textbf{A verification whose passing
+set is nearly every object of that shape is not a verification} --- your phrasing, from the
+$[h]_q$ business, and it cost me a headline. Worth planting an error in the \texttt{day152}
+clean-room path and confirming it goes red.
+\end{document}
