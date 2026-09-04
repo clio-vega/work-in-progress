@@ -631,7 +631,7 @@
       "children": [
        {
         "id": "abacus-ribbon-move-direction",
-        "approach": "The DIRECTION of the e-ribbon abacus move, machine-checked, after the 2026-09-03 DREAM note recorded N_e^{(h)} as REMOVING a ribbon and concluded R_e(-1) = p_e^perp. Both primary sources say it ADDS: the Definition in 2026-08-31-Q59-commutator-rigidity.tex (lines 77-85) and fock_ell.py::R_e, which moves a bead b -> b+e. Formalised on Finset Z (the WindowBridge bead convention): addRibbon e M b = insert (b+e) (M.erase b), removeRibbon e M c = insert (c-e) (M.erase c), ribbonHeight e M b = card (M.filter (fun x => b < x < b+e)) -- i.e. lem:dict(iii) of the Q59 paper taken as the DEFINITION on the bead side. PROVED: (1) the two moves are mutually inverse on their domains (b in M, b+e not in M and dually); (2) sum_addRibbon / sum_removeRibbon -- the bead sum goes UP by e on adding and DOWN by e on removing. This is the orientation with a number attached, the abacus shadow of |mu| = |lambda| + e, and it is the one statement here that the opposite convention cannot satisfy; it is what pins R_e(-1) = M_{p_e} rather than p_e^perp. (3) ribbonHeight_addRibbon -- the height read back off the result equals the height read off the source; (4) ribbonHeight_le_sub_one / ribbonHeight_lt -- the deg_t R_e(t) <= e-1 bound the Q59 paper asserts; (5) both ends of the range ATTAINED for every e (ribbonHeight_Ico gives e-1, ribbonHeight_singleton gives 0), with side conditions checked; (6) a deliberate NEGATIVE control, exists_addRibbon_not_removeRibbon_of_mem / addRibbon_collision: drop the side condition b+e not in M and the round trip provably fails (e=2, M={0,2}, b=0 collapses to {0}), so the inverse lemmas are not ranging over a trivial domain. Non-vacuity witnesses accompany every hypothesis set. TWO HONEST FINDINGS FROM THE FORMALISATION. (a) The inverse lemmas need NO positivity: 0 < e enters only via addRibbon_notMem_self (b not in addRibbon e M b), which is what makes the round trip a legal ribbon REMOVAL rather than an insert/erase coincidence; at e=0 the removal is not legal at all. (b) The height bound and the height-preservation lemma need NO ribbon side conditions -- ribbonHeight_le_sub_one is pure window counting, M cap (b,b+e) subset Ioo b (b+e) against Int.card_Ioo. So this gives a SECOND, independent route to the h <= e-1 half of Q63-exponent-range-and-cross-runner, by interval cardinality rather than by the ZMod-N label argument of Q63-window-bridge. WHAT IS NOT FORMALISED, and is the boundary of the node: lem:dict(iii) ITSELF, i.e. the bijection between e-ribbons addable to the Young diagram of lambda and the beads b in M(lambda) with b+e not in M(lambda), together with the claim that the ribbon's cells have contents b+1..b+e. That is a statement about partitions and diagrams; here the bead side is the definition. Nor is M(lambda) itself modelled -- a genuine Maya set is cofinite in Z_{<0}, hence infinite, while these are Finsets; every statement above is local to the moved bead and so insensitive to the tail, but a statement about |lambda| would not be. lake build: 2974 jobs, 0 sorries, 26 user-facing declarations (44 including compiler-internal). Module imported from the root TworowD4Kernel.lean, so it is inside the axiom audit's import closure; axiom set compared as a SET and equal to {propext, Classical.choice, Quot.sound} for all 162 user-facing declarations in the closure, 0 offenders, 0 sorryAx. Commit 6fb6c4a of clio-vega/tworow-d4-kernel.",
+        "approach": "The DIRECTION of the e-ribbon abacus move, machine-checked, after the 2026-09-03 DREAM note recorded N_e^{(h)} as REMOVING a ribbon and concluded R_e(-1) = p_e^perp. Both primary sources say it ADDS: the Definition in 2026-08-31-Q59-commutator-rigidity.tex (lines 77-85) and fock_ell.py::R_e, which moves a bead b -> b+e. Formalised on Finset Z (the WindowBridge bead convention): addRibbon e M b = insert (b+e) (M.erase b), removeRibbon e M c = insert (c-e) (M.erase c), ribbonHeight e M b = card (M.filter (fun x => b < x < b+e)) -- i.e. lem:dict(iii) of the Q59 paper taken as the DEFINITION on the bead side. PROVED: (1) the two moves are mutually inverse on their domains (b in M, b+e not in M and dually); (2) sum_addRibbon / sum_removeRibbon -- the bead sum goes UP by e on adding and DOWN by e on removing. This is the orientation with a number attached, the abacus shadow of |mu| = |lambda| + e, and it is the one statement here that the opposite convention cannot satisfy; it is what pins R_e(-1) = M_{p_e} rather than p_e^perp. (3) ribbonHeight_addRibbon -- the height read back off the result equals the height read off the source; (4) ribbonHeight_le_sub_one / ribbonHeight_lt -- the deg_t R_e(t) <= e-1 bound the Q59 paper asserts; (5) both ends of the range ATTAINED for every e (ribbonHeight_Ico gives e-1, ribbonHeight_singleton gives 0), with side conditions checked; (6) a deliberate NEGATIVE control, exists_addRibbon_not_removeRibbon_of_mem / addRibbon_collision: drop the side condition b+e not in M and the round trip provably fails (e=2, M={0,2}, b=0 collapses to {0}), so the inverse lemmas are not ranging over a trivial domain. Non-vacuity witnesses accompany every hypothesis set. TWO HONEST FINDINGS FROM THE FORMALISATION. (a) The inverse lemmas need NO positivity: 0 < e enters only via addRibbon_notMem_self (b not in addRibbon e M b), which is what makes the round trip a legal ribbon REMOVAL rather than an insert/erase coincidence; at e=0 the removal is not legal at all. (b) The height bound and the height-preservation lemma need NO ribbon side conditions -- ribbonHeight_le_sub_one is pure window counting, M cap (b,b+e) subset Ioo b (b+e) against Int.card_Ioo. So this gives a SECOND, independent route to the h <= e-1 half of Q63-exponent-range-and-cross-runner, by interval cardinality rather than by the ZMod-N label argument of Q63-window-bridge. WHAT IS NOT FORMALISED, and is the boundary of the node: lem:dict(iii) ITSELF, i.e. the bijection between e-ribbons addable to the Young diagram of lambda and the beads b in M(lambda) with b+e not in M(lambda), together with the claim that the ribbon's cells have contents b+1..b+e. That is a statement about partitions and diagrams; here the bead side is the definition. Nor is M(lambda) itself modelled here -- a genuine Maya set is cofinite in Z_{<0}, hence infinite, while these are Finsets. THAT HALF OF THE BOUNDARY IS NOW REMOVED by the child node maya-size-additivity (2026-09-04): sum_addRibbon is superseded by Maya.size_addRibbon, which is |mu| = |lambda| + e on the genuine cofinite Maya set. The ribbonHeight half of this node is NOT superseded and does not need to be -- height is a count in the bounded open window (b, b+e), so the Finset model is faithful for it. lake build: 2974 jobs, 0 sorries, 26 user-facing declarations (44 including compiler-internal). Module imported from the root TworowD4Kernel.lean, so it is inside the axiom audit's import closure; axiom set compared as a SET and equal to {propext, Classical.choice, Quot.sound} for all 162 user-facing declarations in the closure, 0 offenders, 0 sorryAx. Commit 6fb6c4a of clio-vega/tworow-d4-kernel.",
         "trust": "lean-verified",
         "file": "2026-09-03-lean-abacus-ribbon.md",
         "lean": "TworowD4Kernel.addRibbon, TworowD4Kernel.removeRibbon, TworowD4Kernel.ribbonHeight, TworowD4Kernel.mem_addRibbon, TworowD4Kernel.mem_removeRibbon, TworowD4Kernel.addRibbon_mem_self, TworowD4Kernel.addRibbon_notMem_self, TworowD4Kernel.addRibbon_removeRibbon, TworowD4Kernel.removeRibbon_addRibbon, TworowD4Kernel.sum_addRibbon, TworowD4Kernel.sum_removeRibbon, TworowD4Kernel.ribbonHeight_addRibbon, TworowD4Kernel.ribbonHeight_le_sub_one, TworowD4Kernel.ribbonHeight_lt, TworowD4Kernel.ribbonHeight_Ico, TworowD4Kernel.ribbonHeight_Ico_sideConditions, TworowD4Kernel.ribbonHeight_singleton, TworowD4Kernel.ribbonHeight_singleton_sideConditions, TworowD4Kernel.addRibbon_removeRibbon_nonvacuous, TworowD4Kernel.ribbonHeight_nonvacuous, TworowD4Kernel.ribbonHeight_Ico_nonvacuous, TworowD4Kernel.sum_addRibbon_nonvacuous, TworowD4Kernel.exists_addRibbon_not_removeRibbon_of_mem, TworowD4Kernel.addRibbon_collision",
@@ -639,7 +639,21 @@
          "math/9905196",
          "q-alg/9512031"
         ],
-        "children": [],
+        "children": [
+         {
+          "id": "maya-size-additivity",
+          "approach": "|mu| = |lambda| + e on the GENUINE Maya set, removing the boundary that abacus-ribbon-move-direction stated about itself. A Maya diagram is a set M subset Z that is finite above and cofinite below; here that is carried as the SINGLE condition (M symmDiff vacuum).Finite with vacuum = Set.Iio 0 = M(empty), because M symmDiff vacuum = (M cap Z_{>=0}) cup (Z_{<0} minus M) -- one hypothesis, not two, and this is what makes the bead move cheap. SIZE: size M = sum_{x in M minus vacuum} x - sum_{x in vacuum minus M} x, the vacuum-relative bead sum. This IS |lambda|: for M(lambda) = {lambda_j - j : j >= 1} and N >= ell(lambda), sum_{j<=N}(lambda_j - j) - sum_{j<=N}(-j) = sum_{j<=N} lambda_j = |lambda|, and the two families agree for j > ell(lambda) so the truncation drops. THEOREM: Maya.size_addRibbon : (M.addRibbon e b).size = M.size + e, under 0 < e, b in M.carrier, b + e not in M.carrier. THE PROOF, and why it is short. Naively there are three cases -- b >= 0 (move entirely above the vacuum line), b < 0 <= b + e (the bead CROSSES the line, trading a hole below for a bead above), and b + e < 0 (entirely below, filling a pre-existing hole) -- and each trades sum terms differently. All three are avoided: both sizes are evaluated on a COMMON finite window S containing (M symmDiff vacuum) and {b, b+e}, via sizeOn S A = sum_{x in S} (wt A x - wt vacuum x), well-defined by sizeOn_eq_of_subset because off the symmetric difference the two weights agree. Subtracting, the wt vacuum terms cancel IDENTICALLY -- before any case analysis -- and the remainder is supported on {b, b+e}, giving -b + (b+e) = e. Finiteness survives the move for the same structural reason: a bead move is itself a symmetric difference, symmDiff is associative, so (moveBead e A b) symmDiff vacuum is contained in (A symmDiff vacuum) cup {b, b+e} with no case split. HONEST CONSEQUENCE, and it is why the witnesses below exist: the proof is BLIND to the vacuum line, so it cannot itself testify that the three regimes are inhabited. Each is witnessed separately with side conditions checked -- size_onebox (crossing: vacuum, b=-1, e=1, giving |(1)| = 1), size_addRibbon_above (b=0, e=2, giving 3), size_addRibbon_below (b=-3, b+e=-1 < 0, e=2, filling the hole the first move left, giving |(1,1,1)| = 3). Anchor size_nil : |empty| = 0. NEGATIVE CONTROL, and it fires: exists_size_addRibbon_ne_of_mem. Drop the side condition b + e not in M and the theorem is FALSE, not merely weaker -- from the vacuum, b = -3 with e = 1 lands on the occupied site -2, the beads collide, and size jumps by 3 (recording the hole left at -3) rather than by e = 1. So hbe is load-bearing. WHAT IS STILL NOT FORMALISED, the residual boundary: lem:dict(iii) itself, i.e. the bijection between e-ribbons addable to the Young diagram of lambda and the beads b in M(lambda) with b + e not in M(lambda), and the claim that the ribbon's cells have contents b+1..b+e. The bead side remains the definition; what is now proved is that the bead side has the right SIZE, which is the part that previously rested on analogy. Also not formalised: size M = |lambda| as a statement quantified over partitions -- the identification argument above is in the module docstring, not in Lean, since partitions are not modelled. lake build 2975 jobs, 0 sorries; lake test green. Module imported from the root TworowD4Kernel.lean, hence inside the axiom audit's import closure. Axioms, checked declaration by declaration for all 31 listed below and stated exactly: every axiom set is a SUBSET of {propext, Classical.choice, Quot.sound}, nothing outside the allowlist appears, and there is no sorryAx. It is NOT set equality everywhere -- 5 of the 31 use strictly fewer (moveBead none; vacuum, mem_moveBead, moveBead_mem_self propext only; moveBead_notMem_self propext and Quot.sound), which is expected for definitions and pure-membership lemmas that never touch Classical.choice. The main theorem Maya.size_addRibbon and every size result do use exactly the three, Classical.choice entering through wt's classical membership decision. Test-driver entries are statement-pinning examples rather than #guard, and are labelled as the weaker detector they are: size is noncomputable (wt decides membership through Classical.propDecidable) and #guard compiles its argument. Commit aa59f76 of clio-vega/tworow-d4-kernel.",
+          "trust": "lean-verified",
+          "file": "2026-09-04-lean-maya-size.md",
+          "lean": "TworowD4Kernel.vacuum, TworowD4Kernel.wt, TworowD4Kernel.wt_of_mem, TworowD4Kernel.wt_of_notMem, TworowD4Kernel.wt_eq_of_notMem_symmDiff, TworowD4Kernel.sizeOn, TworowD4Kernel.sizeOn_eq_of_subset, TworowD4Kernel.Maya, TworowD4Kernel.Maya.size, TworowD4Kernel.Maya.size_eq_sizeOn, TworowD4Kernel.Maya.vacuum_fin, TworowD4Kernel.Maya.nil, TworowD4Kernel.Maya.size_nil, TworowD4Kernel.moveBead, TworowD4Kernel.mem_moveBead, TworowD4Kernel.mem_moveBead_of_ne, TworowD4Kernel.moveBead_mem_self, TworowD4Kernel.moveBead_notMem_self, TworowD4Kernel.symmDiff_moveBead_subset, TworowD4Kernel.moveBead_fin, TworowD4Kernel.Maya.addRibbon, TworowD4Kernel.Maya.addRibbon_carrier, TworowD4Kernel.Maya.size_addRibbon, TworowD4Kernel.Maya.onebox, TworowD4Kernel.Maya.mem_onebox, TworowD4Kernel.Maya.size_onebox, TworowD4Kernel.Maya.size_addRibbon_above, TworowD4Kernel.Maya.size_addRibbon_below, TworowD4Kernel.Maya.collision_carrier, TworowD4Kernel.Maya.collision_symmDiff, TworowD4Kernel.Maya.exists_size_addRibbon_ne_of_mem",
+          "sources": [
+           "math/9905196",
+           "q-alg/9512031"
+          ],
+          "children": [],
+          "role": "premise"
+         }
+        ],
         "role": "premise"
        }
       ]
@@ -731,6 +745,91 @@
          }
         ],
         "role": "premise"
+       },
+       {
+        "id": "Q81-divisibility-all-k",
+        "approach": "THEOREM 1: (1+t) divides every entry of the k-fold nested bracket C_k = [R_e1,[R_e2,[...,R_ek]]] for EVERY k>=2 and all e_i>=2, with no distinctness hypothesis. Proof: R_e = M_{f_e} - (1+t)E_e (Q75 Cor T2), expand the nested bracket multilinearly; the all-multiplication term vanishes because Lambda is commutative, and every other term carries (1+t). Generalises Q75 Cor T3 from k=2 to all k.",
+        "trust": "proved",
+        "file": "2026-09-04-Q81-nested-bracket.tex",
+        "role": "premise",
+        "children": []
+       },
+       {
+        "id": "Q81-reduction-formula",
+        "approach": "THEOREM 2 (the session's main result): C_k/(1+t)|_{t=-1} = ad_{p_e1}...ad_{p_e_{k-2}}( Q_{e_{k-1},e_k}(-1) ), where Q_{e,e'} = [R_e,R_e']/(1+t) is the Q76 quotient and ad_{p_a}(X)=[M_{p_a},X]. Proof: in the multilinear expansion only the single-E terms matter at first order, and those with the E in slot i <= k-2 vanish identically because the innermost bracket is already a bracket of two multiplication operators. Reduces level-k sharpness entirely to level 2.",
+        "trust": "proved",
+        "file": "2026-09-04-Q81-nested-bracket.tex",
+        "role": "premise",
+        "children": [
+         {
+          "id": "Q81-reduction-verification",
+          "approach": "Entrywise check of the reduction formula, Maya/abacus engine against an independent shape engine (M_{p_e} and N_e = E_e(-1) built only from skew-shape statistics): k=3, 1310 entries, 0 mismatches, all nonzero; k=4, 270 entries, 0 mismatches, all nonzero. The k=4 nonzero count reproduced independently by the shape engine alone.",
+          "trust": "computed",
+          "file": "2026-09-04-Q81-nested-bracket.tex",
+          "role": "attempt",
+          "children": []
+         }
+        ]
+       },
+       {
+        "id": "Q81-conjA-depth-refuted",
+        "approach": "DEAD END, and the dead end is in the brief. Conjecture (A) -- gcd of C_k is (1+t)^{k-1} -- is FALSE for every k>=3. The gcd is exactly (1+t)^1, in all 190 (lambda, triple) configurations at k=3 (|lambda|<=5, all ten triples from {2,...,6}, 9524 nonzero entries) and at k=4. Diagnosis: at k=2 the observed exponent 1 coincides with k-1, so the k=2 data cannot separate 'k-1' from '1'; Theorem 2 shows the mechanism yields exactly one factor for every k.",
+        "trust": "dead-end",
+        "file": "2026-09-04-Q81-nested-bracket.tex",
+        "role": "attempt",
+        "reason": "refuted by exhaustive computation (gcd = (1+t) in 190/190 configurations at k=3) and explained by Q81-reduction-formula",
+        "children": []
+       },
+       {
+        "id": "Q81-conjB-component-reading-refuted",
+        "approach": "DEAD END: the identification of the two-valued k=2 statistic as the number of CONNECTED COMPONENTS of mu/lambda (DREAM 2026-09-04, Crown 1) is FALSE, and false already at k=2. m_shape = 1 on all 283 nonzero entries at k=2 and on all 9524 at k=3. The k=2 coordinate is m_hop = #(B(lam) \\ B(mu)), the number of moving beads (0/283 violations of +-t^a(1+t)(1-t)^{m_hop-1}); and m_hop itself fails at k=3 (relation holds on 7067 of 9524, and the residues include +-2, +-(t^2+1), +-(t^2+t+1), so the coefficients-in-{0,+-1} rigidity is also a k=2 phenomenon). Q76-commutator-closed-form is unaffected: it never used the reading.",
+        "trust": "dead-end",
+        "file": "2026-09-04-Q81-nested-bracket.tex",
+        "role": "attempt",
+        "reason": "m_shape is identically 1 on the entire support of the commutator; the component reading was a renaming of the hop count, and even that does not survive k=3",
+        "children": [
+         {
+          "id": "Q81-crossing-implies-connected",
+          "approach": "THE MECHANISM, and the reason no k=2 data set of any size could have caught it: two bead-hop intervals are DISJOINT iff mu/lambda has two components; if they meet (crossing or nested) mu/lambda is connected and contains a 2x2. By Q76-two-bead-entry-closed-form the commutator is supported exactly on the crossing pairs, so m_shape is constant on its support BY CONSTRUCTION -- the operator was built by a cancellation that annihilates the variation of the statistic being tested. Verified 2208 configurations, |lambda|<=6, 2<=e<e'<=5: 1254 disjoint (m=2, no 2x2) / 796 crossing / 158 nested (both m=1, with 2x2), 0 violations. The disjoint direction is proved; the 2x2 claim in the meeting case is at verification level.",
+          "trust": "computed",
+          "file": "2026-09-04-Q81-nested-bracket.tex",
+          "role": "premise",
+          "children": []
+         }
+        ]
+       },
+       {
+        "id": "Q81-uniform-hook-witness",
+        "approach": "SHARPNESS at k=3, uniform in the sizes: for pairwise distinct e_1,e_2,e_3 >= 2 with sorted values f_1<f_2<f_3, j := f_2, E := sum e_i, the entry <(E-j,1^j) | C_3 | empty> is +t^{j-1}(1+t) if the largest size is e_3, -t^{j-1}(1+t) if it is e_2, and 0 if it is e_1. Hence the gcd of C_3 is exactly (1+t) whenever max{e_i} != e_1. Proof by three lemmas, all proved for every k: (chain) the contributing hop sequences are single spatial chains b=x_0<...<x_k=b+E; (height) the total weight is t^{j-r+1} where r is the sign-change threshold of the partial sums, independent of the time order; (sign) the nested bracket expands over exactly the time orders that are unimodal with peak k, with sign (-1)^{#before the peak}. For k=3 the threshold r>=3 is impossible and the two signed counts are tabulated by hand. Generalises the Q76 witness mu=(e',1^e) (which is this family at k=2).",
+        "trust": "proved",
+        "file": "2026-09-04-Q81-nested-bracket.tex",
+        "role": "premise",
+        "children": [
+         {
+          "id": "Q81-witness-k4-and-up",
+          "approach": "The same witness at k>=4: the entry at mu=(E-j,1^j) with j the second-largest size is t^{j-1}(1+t) for every 4- and 5-subset of {2,...,6} tested with the largest size innermost. The chain, height and sign lemmas hold for all k; what is unproved is the r=2 signed count and the vanishing of the r>=3 counts (r>=3 is vacuous at k=3 but genuine at k>=4, e.g. sizes {2,3,5,6} have 2+3 <= j=5). This is the paper's one located gap; it is pure sign combinatorics with no t in it.",
+          "trust": "computed",
+          "file": "2026-09-04-Q81-nested-bracket.tex",
+          "role": "attempt",
+          "children": []
+         },
+         {
+          "id": "Q81-sharpness-k-up-to-6",
+          "approach": "Sharpness verified for 3<=k<=6 via the reduction formula and the shape engine: ad_{p_e1}...ad_{p_e_{k-2}}(Q_{e_{k-1},e_k}(-1)) is nonzero for (2,3,4), (2,3,4,5), (2,3,4,5,6) and (2,3,4,5,6,7) -- 144, 270, 217, 621 nonzero entries. Equivalently Q_{e,e'}(-1) has order at least 4 as a differential operator on Lambda = Q[p_1,p_2,...].",
+          "trust": "computed",
+          "file": "2026-09-04-Q81-nested-bracket.tex",
+          "role": "attempt",
+          "children": []
+         }
+        ]
+       },
+       {
+        "id": "Q81-controls",
+        "approach": "Controls. C4 Jacobi + inner antisymmetry on the engine, 28 configurations, 0 failures, run BEFORE any refutation was believed. C5 hand computation of <(6,1,1,1)|C_3(2,3,4)|empty> from the bead definition, all six spatial chains and their legal time orders: t^2(1+t), matching both engines. C3 repeated sizes (the conjectures assumed pairwise distinct; Theorems 1 and 2 do not): (2,3,2),(3,2,3),(2,2,3),(3,4,3),(2,3,2,3) all nonzero with gcd exactly (1+t); (2,3,3),(2,2,2),(2,2,3,3) vanish identically because the innermost bracket [R_a,R_a]=0. Distinctness is not where the boundary lies and the statement was not restricted to make it true.",
+        "trust": "computed",
+        "file": "2026-09-04-Q81-nested-bracket.tex",
+        "role": "attempt",
+        "children": []
        }
       ],
       "role": "premise"
