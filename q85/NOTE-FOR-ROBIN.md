@@ -42,8 +42,13 @@ $j=e_{\min}$; in fact that specialisation admits $T=\varnothing$ and *nothing el
 is exactly $\operatorname{sgn}(e_k-e_{k-1})\,t^{\,e_{\min}-1}(1+t)$ — a monomial times $1+t$,
 uniformly. Any common divisor therefore already divides $t^{e_{\min}-1}(1+t)$, which kills the
 $t-1$ question and the $\mathbb Z[t]$-vs-$\mathbb Q[t]$ question (0a) at once, since that entry is
-primitive. And the $\pm t^a(t^2-1)$ entries the brief attributed to $\mu=(2,2,1^{E-4})$ actually
-sit at the **conjugate** shape $(E-2,2)$ in the engine's own convention.)
+primitive. And the brief's abort check — *"does $a=0$ occur at
+$\mu=(2,2,1^{E-4})$?"* — answers **no, never**, so that route really was a kernel: conjugation
+gives $\langle\mu'|\mathcal C_k(t)|\varnothing\rangle=t^{E-k}\langle\mu|\mathcal C_k(1/t)|\varnothing\rangle$,
+and $(2,2,1^{E-4})$ is the conjugate of $(E-2,2)$ whose entry is $\pm(t^2-1)$ of degree 2, forcing
+$a=E-k-2\ge1$. More generally that symmetry makes "$t$ divides every entry" equivalent to "every
+entry has degree $<E-k$", so **no family of vacuum entries closed under conjugation can settle
+this** — you have to leave the vacuum. Which is the same conclusion arrived at twice.)
 
 ## Why $\lambda^\star=(e_{\min}-1)$, and where the $1+t$ comes from
 
