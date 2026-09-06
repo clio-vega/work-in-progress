@@ -1051,7 +1051,34 @@
             "trust": "proved",
             "file": "2026-09-05-Q85-literal-gcd.tex",
             "approach": "THE SIGN SUM. For nonempty Sbar subset [k], N(Sbar) := sum over w in U (unimodal words with peak k, sign (-1)^{q-1}) whose first |Sbar| letters are exactly Sbar, of eps(w). Then N(Sbar) = (-1)^{|Sbar|} if k-1 in Sbar and k not in Sbar; (-1)^{|Sbar|-1} if k in Sbar and k-1 not in Sbar; and 0 if Sbar contains both or neither. Proof by the rho_T parametrisation (T = letters before the peak, eps = (-1)^{|T|}) in two cases, each collapsing by sum over subsets of a nonempty set of (-1)^{|B|} = 0. Evaluated at Sigma_Sbar = e_min it collapses to a SINGLE set: if e_{k-1} < e_k then k in Sbar is impossible (Sigma >= e_k > e_min) and k-1 in Sbar forces Sbar = {k-1}; symmetrically otherwise. So X = -sgn(e_k - e_{k-1}), with no generating-function coefficient entering -- the choice e_min = min(e_{k-1},e_k), rather than either one separately, is what makes the collapse total.",
-            "children": []
+            "children": [
+             {
+              "id": "Q85-prefix-sign-sum-lean-finite-k",
+              "role": "premise",
+              "trust": "lean-verified",
+              "file": "2026-09-06-lean-prefix-sign-sum.md",
+              "lean": "TworowD4Kernel.prefixSignSum_eq_five",
+              "approach": "prop:N machine-checked at k = 3, 4 and 5 by kernel computation (`decide`) over every nonempty Sbar subset [k]: TworowD4Kernel.prefixSignSum_eq_three, _four, _five. N(Sbar) is DEFINED in Lean as the source defines it -- a sum over T subset [k-1] of (-1)^{|T|} restricted to the words rho_T whose length-|Sbar| List.take has letter set exactly Sbar -- so this checks the statement, not a restatement. k = 6, 7 are covered by #guard in TworowD4KernelTests (compiled evaluator); k = 6 exceeds maxRecDepth for `decide`. Sorry-free; #print axioms gives exactly [propext, Classical.choice, Quot.sound]. NOT the general-k theorem: see Q85-prefix-sign-sum-lean-general-gap.",
+              "children": []
+             },
+             {
+              "id": "Q85-prefix-sign-sum-lean-sign-gloss",
+              "role": "premise",
+              "trust": "lean-verified",
+              "file": "2026-09-06-lean-prefix-sign-sum.md",
+              "lean": "TworowD4Kernel.rho_getElem_peak",
+              "approach": "The source states the sign twice -- eps(w) = (-1)^{q-1} with q = letters at or before the peak (lem:sign), and eps(rho_T) = (-1)^{|T|} (eq:rhoT) -- and they agree only if the peak is counted in q. Lean defines ONE of them ((-1)^{|T|}) and DERIVES the other: rho_getElem_peak says (rho k T)[#T]? = some k, i.e. the peak sits at 0-based index |T|, hence q = |T| + 1. Supporting: rho_length ((rho k T).length = k) and rho_toFinset (letter set is exactly [k]), so rho_T is a word on [k] with each letter once. Sorry-free, standard three axioms.",
+              "children": []
+             },
+             {
+              "id": "Q85-prefix-sign-sum-lean-general-gap",
+              "role": "attempt",
+              "trust": "unclassified",
+              "file": "2026-09-06-lean-prefix-sign-sum.md",
+              "approach": "prop:N for GENERAL k is not formalised, and the whole obstruction is one lemma about ascending enumerations, not the algebra: for T subset range k and r <= #T, ((ascList k T).take r).toFinset = S iff (S subset T and #S = r and every element of S is below every element of T \\\\ S) -- 'the length-r prefix of the ascending enumeration of T is S iff S is an initial segment of T'. With it, the source's two cases each reindex the T-sum and collapse by sum_{B subset C} (-1)^{|B|} = 0 for C nonempty. Without it the reindexing cannot be stated. Mathlib appears to have no take/sort interface of this shape. Secondary: Finset.sort goes through List.mergeSort (WellFounded.fix), which the kernel cannot reduce, so `decide` is stuck on any statement mentioning it -- ascList (List.range k filtered) was introduced for exactly this reason.",
+              "children": []
+             }
+            ]
            },
            {
             "id": "Q85-verification",
