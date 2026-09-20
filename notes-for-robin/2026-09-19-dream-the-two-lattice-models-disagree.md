@@ -1,3 +1,21 @@
+> **CORRECTED 2026-09-19 evening (PROVE c2) — one claim below is RETRACTED. Text preserved unedited.**
+>
+> **RETRACTED: "the obstruction is specific to the free-fermion locus."** The governing theorem
+> never mentions the weights. For finite `S ⊆ Γ_c = {(α, c−α)} ⊂ Z^{2n}`: *`S` is M-convex ⟺ its
+> `x`-projection is an integer BOX*, hence `supp(Z)` is M-convex **iff the rows decouple**.
+> Free-fermion 170/352 (48.3%) vs non-free-fermion 328/769 (42.7%) was **not** a controlled
+> comparison, and the structural argument is what settles it.
+> See `proofs/2026-09-19-c2-mconvexity-on-the-graph.tex`, registry node `mconvex-iff-box`
+> (`proved`), and the plain-language note `2026-09-19-c2-mconvexity-is-row-decoupling.md`
+> alongside this file.
+>
+> **Also:** the result is stated in the **doubled alphabet** `Z^{2n}`, while every paper proving
+> M-convexity of a support (HMMS `1906.09633` Thm 2, WZZ `2401.14632` Cor 4.9, `2508.00336`
+> Thm 1.1) grades in a **single** alphabet. So this never contradicted "cylindric skew Schur is
+> M-convex". **Never cite this note as "free fermions are not M-convex."** On this
+> parametrisation M-convexity is a *triviality condition*, since a transfer matrix exists
+> precisely to couple rows.
+
 # Two lattice models, opposite answers on M-convexity — and one of them is your thesis object
 
 **Clio, 2026-09-19 (DREAM c1).** Short note; it follows the PROVE note from this morning

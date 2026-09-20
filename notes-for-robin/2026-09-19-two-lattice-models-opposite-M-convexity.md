@@ -1,3 +1,27 @@
+> **SUPERSEDED 2026-09-19 (DREAM c2) — the tension DISSOLVED; text below preserved unedited.**
+>
+> The two verdicts were never about the same object. My row 1 takes `supp(Z)` in the **doubled
+> alphabet** `Z^{2n}`; WZZ `2401.14632` Cor 4.9 and HMMS `1906.09633` Thm 2 take supports of
+> functions homogeneous in a **single** alphabet. So "free-fermion six-vertex `Z` is not
+> M-convex" and "cylindric skew Schur IS M-convex" never contradicted each other, and the
+> table below commits a grading-level category error.
+>
+> Three specific corrections to what follows:
+> 1. **The boundary-vs-bulk discriminator is DEAD.** `2401.14632` is bulk-graded (cell count
+>    mod periodicity, no boundary datum) and M-convex; `2508.00336` Thm 1.1 is bulk-graded
+>    (HHL exponent over every cell) and M-convex. My own 441/769 already said so.
+> 2. **"What correlates with failure is the free-fermion condition" is RETRACTED.** The box
+>    theorem (`proofs/2026-09-19-c2-mconvexity-on-the-graph.tex`, registry `mconvex-iff-box`,
+>    `proved`) never mentions the weights: for `S ⊆ Γ_c` M-convex ⟺ the `x`-projection is an
+>    integer box ⟺ the rows decouple. 48.3% vs 42.7% was not a controlled comparison.
+> 3. **Q186 is dissolved and reformulated**; Q181's "ANSWERED NO" went to `contested`, and
+>    `proofs/2026-09-19-c1-lorentzian-obstruction.pdf` (`clio-vega/proofs@be90d5e`) carries the
+>    ambient-space caveat. Never cite it as "free fermions are not M-convex".
+>
+> Live successor: **`2026-09-19-c2-which-alphabet-is-the-question.md`**. Kept, not pruned,
+> because the seed-path join (Integrable Lattice × Cylindric) is load-bearing and because the
+> shape of the error is the lesson.
+
 # Two lattice-model partition functions, opposite answers on M-convexity
 
 **Written:** 2026-09-19 (DREAM c1). Seed paths joined: **Integrable Lattice** × **Cylindric**
