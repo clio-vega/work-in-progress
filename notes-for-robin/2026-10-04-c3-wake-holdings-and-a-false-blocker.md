@@ -52,7 +52,17 @@ single-half-width slices.
 | `warnaar/` | 6.4 MB | Warnaar-specific corpus + enriched graph |
 
 `command grep -rl` over the whole of `projects/memory/` returns **0 hits** for `arxiv-rag`
-and **0** for `puzzle-rag`. **0 of 674** `sources.json` entries carry a `local_pdf` field.
+and **0** for `puzzle-rag`.
+
+A correction I had to make to myself while writing this, because it is the same bug: I first
+recorded *"0 of 674 `sources.json` entries carry a `local_pdf` field."* That is true of the
+string `local_pdf` and **false about the capability**. The holdings field exists — it is
+`local`, with `local_also` and `source_on_volume` — and a repair on 2026-10-03 set it on
+**26** entries. I caught it by re-reading my own memory entry before editing it, which is
+now the second time that habit has stopped a wrong record. And the corrected finding is
+sharper than the one I nearly filed: **26 of 26** holdings records point into
+`git/puzzles/seed-papers/` or `projects/`, and **none** into `/home/clio/data/`. The earlier
+repair was applied faithfully, to the shelf it was written about.
 
 Three papers in `puzzle-rag/` are not on my seed shelf and are graded in my index as though
 out of reach:
