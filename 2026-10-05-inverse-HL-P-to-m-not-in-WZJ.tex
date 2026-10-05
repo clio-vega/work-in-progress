@@ -1,0 +1,123 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm,geometry,hyperref}
+\geometry{margin=1in}
+\newtheorem{claim}{Claim}
+\title{The inverse Hall--Littlewood $P\to m$ matrix is \emph{not} in the
+Wheeler--Zinn-Justin Hall--Littlewood papers\\[2pt]
+\large and the proposed DFK locator is edition-confused}
+\author{C.\ Vega (Clio)}
+\date{2026-10-05}
+\begin{document}
+\maketitle
+
+\noindent\fbox{\parbox{0.96\textwidth}{%
+\textbf{From:} C.\ Vega (Clio)\quad\textbf{To:} R.\ (\texttt{grandpa-rick})\quad
+\textbf{Date:} 2026-10-05\\
+\textbf{Re:} your email of 2026-10-04 00:16, \emph{``s=1 block valuation law; is the
+inverse HL $P\to m$ valuation known?''}\\
+\textbf{Source commit:} \texttt{clio-vega/work-in-progress@COMMITHASH}\\
+\textbf{Grade:} a \emph{negative} literature finding, measured at first hand on two
+papers I hold, with controls. It is not a theorem.}}
+
+\section{Your question (a), answered: no}
+
+You asked whether the $t=0$ case of your block valuation law --- the $(1-q)$-adic
+valuation of $[h_\mu]Q'_\lambda(x;q)$, an entry of the inverse Hall--Littlewood
+$P\to m$ matrix, being $\ell(\lambda)-\kappa(\lambda,\mu)$ --- appears in the
+Wheeler--Zinn-Justin Hall--Littlewood papers on my shelf.
+
+\begin{claim}
+It is not in either of them, and the reason is structural rather than accidental:
+neither paper uses the monomial basis at all.
+\end{claim}
+
+I read both at first hand today. They are:
+\begin{itemize}
+\item Wheeler--Zinn-Justin, \emph{Hall polynomials, inverse Kostka polynomials and
+puzzles}, \texttt{arXiv:1603.01815}; journal edition \emph{J.\ Combin.\ Theory Ser.\ A}
+\textbf{159} (2018) 107--163. (I give both editions deliberately; see \S4.)
+\item Zinn-Justin, \emph{Honeycombs for Hall polynomials}, \texttt{arXiv:1909.10720}v2.
+\end{itemize}
+
+\paragraph{What they actually compute.} WZJ study two one-parameter generalisations of
+$c^\lambda_{\mu\nu}$, and \emph{both} live in bases other than $m$:
+\begin{align}
+P_\mu P_\nu &= \sum_\lambda f^\lambda_{\mu\nu}(t)\,P_\lambda
+&&\text{(Hall polynomials; the $P$ basis),}\\
+s_\mu P_\nu &= \sum_\lambda \bar K^\lambda_{\mu\nu}(t)\,s_\lambda
+&&\text{(their ``generalized inverse Kostka''; the $s$ basis).}
+\end{align}
+Their $\bar K$ specialises at $\mu=0$ to the expansion of $P_\nu$ in the
+\textbf{Schur} basis. That is the $P\to s$ matrix. The inverse of the $P\to m$ matrix
+is $m\to P$. These are different matrices, and the word ``inverse Kostka'' in their
+title refers to the former.
+
+\paragraph{The measurement.} In the full text of \texttt{1603.01815} (6662 extracted
+lines) the string \texttt{monomial symmetric} occurs \textbf{once}, at the eleventh
+line of the introduction, in the remark that Hall--Littlewood functions interpolate to
+monomial symmetric polynomials at $t=1$. Every other occurrence of ``monomial'' in the
+paper means \emph{a monomial in the lattice-model variables} $x_i$ (``the coefficient
+of a single monomial in $x$'', ``a staircase monomial''), never a basis element
+$m_\mu$. \texttt{monomial basis} and \texttt{m\_\{} occur zero times.
+
+In \texttt{1909.10720} (3232 lines) the same holds: \texttt{monomial symmetric} occurs
+once, again as the $t=1$ interpolation remark, and the only occurrence of
+\texttt{inverse Kostka} anywhere in the paper is \textbf{in the bibliography}, as the
+title of the WZJ reference. That paper proves a Pieri rule and associativity for a
+honeycomb formula for $f^\lambda_{\mu\nu}(t)$ --- again purely the $P$ basis.
+
+\paragraph{Why I am willing to assert a null here.} I have been wrong before by
+reporting a grep null that was an encoding artefact, so I ran the probe with controls.
+Positive controls in \texttt{1603.01815}: \texttt{Hall} 55, \texttt{Kostka} 15,
+\texttt{puzzle} 61, \texttt{Schur} 33. In \texttt{1909.10720}: \texttt{Hall} 43,
+\texttt{honeycomb} 61. A planted nonsense string returned 0. The search terms here are
+pure ASCII, so the en-dash class of false null does not apply. The nulls are real.
+
+\section{So your $t=0$ edge is classical, not WZJ}
+
+Since $P_\lambda(x;0)=s_\lambda$, at $t=0$ your object degenerates to
+$[h_\mu]s_\lambda$, which is the Jacobi--Trudi / inverse-Kostka number --- classical.
+The content of your law is therefore \emph{not} at $t=0$; it is the $(1-q)$-adic
+valuation statement at general $q$, where the $t=0$ case is only the boundary value.
+I would frame the novelty claim that way round.
+
+\paragraph{Pointers I have \emph{not} verified at source.} Offered as leads, not
+citations: Macdonald \emph{Symmetric Functions and Hall Polynomials} \S{}III.6 for the
+$P\to m$ transition matrix itself; E\u{g}ecio\u{g}lu--Remmel (1990) for the combinatorial
+inverse Kostka numbers via special rim-hook tabloids; and, closest to a
+\emph{valuation} statement on Hall polynomials, Butler's \emph{Subgroup lattices and
+symmetric functions}, which does work $p$-adically. If $\ell(\lambda)-\kappa(\lambda,\mu)$
+is in the literature I would expect it there or in the cocharge
+Kostka--Foulkes line (Lascoux--Sch\"utzenberger), not in the integrable-lattice line.
+Treat all four as unchecked.
+
+\section{Your question (b): the locator will not support the claim}
+
+You propose that Theorem C cite \textbf{DFK \texttt{1505.01657} Cor.\ 5.18} for the
+$t=0$ edge, ``whose $M_{k,1}$ is $E_k|_{t=0}$ literally''. That locator is
+edition-confused, and I resolved this by label-probe compile on 2026-10-04:
+\begin{itemize}
+\item In the \textbf{arXiv} edition of \texttt{1505.01657}, the operator product
+$\chi_n=\prod M\cdots\cdot 1$ --- the statement you want --- is \textbf{Cor.\ 5.8},
+p.\ 20.
+\item \textbf{Cor.\ 5.18}, p.\ 27, of that same edition is
+$\chi_n=\lim P_\lambda^{q,t}$, and contains \textbf{no $M$ operator at all}.
+\item The ``Corollary 18'' cited in \texttt{1908.00806} is the \textbf{journal}
+numbering (\emph{Transform.\ Groups} \textbf{23}(2), 2018), which equals arXiv
+Cor.\ 5.8. I believe that is where the number came from.
+\end{itemize}
+So: cite \textbf{Cor.\ 5.8} and name the edition, or cite ``Cor.\ 18 (journal
+edition)''. As written, a referee checking the arXiv version finds a statement with no
+$M$ in it. This is your own Risk 2 (``DFK15 normalization PENDING''); I consider it
+closed by the above, in your favour --- the result you want \emph{is} in DFK, under a
+different number.
+
+\section{What I have not done}
+
+I have not read \S5 of \texttt{1603.01815} (their rank-two fermion--boson model for
+$\bar K$) in detail; only \S1--\S1.2, the definitions, and the closing normalisation.
+If you want the $\bar K^\lambda_{\mu\nu}(t)$ puzzle formula itself quoted precisely,
+ask and I will do that read properly. I have also not verified any of the four
+pointers in \S2.
+
+\end{document}
