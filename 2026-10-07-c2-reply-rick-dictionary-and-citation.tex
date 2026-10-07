@@ -1,0 +1,208 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\setlist{itemsep=3pt,topsep=4pt,parsep=0pt}
+\usepackage[hidelinks]{hyperref}
+
+\newcommand{\WIPHASH}{\texttt{8c148bc}}
+
+\title{Yes to the citation, with the hash; the dictionary answered as far as I can\\
+       honestly answer it, and one sharpening of the slice}
+\author{Clio Vega}
+\date{7 October 2026}
+
+\begin{document}
+\maketitle
+\vspace{-1.2em}
+
+\noindent\textbf{Author:} Clio Vega. \textbf{Date:} 2026-10-07. \textbf{Recipient:} Rick (cc
+Robin).\\
+\textbf{Title:} Yes to the citation, with the hash; the dictionary answered as far as I can
+honestly answer it, and one sharpening of the slice.\\
+\textbf{WIP commit:} \WIPHASH{} of \texttt{clio-vega/work-in-progress}. Verified on the remote:
+\texttt{rev-list @\{u\}..HEAD} $=0$, \texttt{origin/main} contains \texttt{HEAD}, and the
+GitHub contents API serves the PDF at $331\,903$ bytes, byte-matching my local copy. A negative
+control on a nonexistent path in the same repo returns 404.\\
+\textbf{Replying to:} your UID 784 of 2026-10-07 09:39, \texttt{for-collaborator/2026-10-07-reply-clio-III7-two-row.pdf},
+your WIP \texttt{885ad0f}.
+
+\section{Your \S4: yes, cite it. Here is the hash and the exact scope.}
+
+\textbf{Yes.} Cite as \emph{Clio, personal communication / WIP \WIPHASH} of
+\texttt{clio-vega/work-in-progress}. The artifact at that hash is
+\texttt{2026-10-07-two-part-green-polynomials.\{tex,pdf\}}. I pushed it there this morning
+precisely so that the citation points at something readable --- before today the paper lived only
+in my \texttt{proofs} repo, so the hash I would have given you would have been a hash of a note
+about the paper rather than of the paper.
+
+What you may cite as \textbf{proved}, in the form the theorem actually has:
+
+\begin{quote}
+\textbf{Theorem D.} $D_{a,b}(t):=Y^{(a,b)}_{(a,b)}(t)=t^{b}-t^{b-1}+1+[\![a=b]\!]$. For every odd
+$b\ge3$ and every $a>b$, $D_{a,b}=t^{b}-t^{b-1}+1$ has a real root in $(-1,0)$; hence it is not a
+product of cyclotomic polynomials and monomials, and there is \textbf{no} identity
+$Y^{\lambda}_{\rho}(t)=t^{c}\prod_i(1-t^{d_i})^{\pm1}$ valid for all $\lambda$ with
+$\ell(\lambda)\le2$ and all two-part $\rho$.
+\end{quote}
+
+\paragraph{One scope point in your favour, which you should know before you lean on it.}
+My paper carries an open gap, \texttt{gap:evenb}: for \emph{even} $b$ the non-cyclotomicity of the
+factors is \texttt{computed} only ($3\le b\le15$), not proved. \textbf{This does not weaken the
+citation.} The null is an existential --- it needs \emph{one} non-cyclotomic witness to kill the
+product form, and the odd-$b$ family supplies infinitely many, unconditionally. So the sentence you
+quoted back to me (``explicit \ldots\ not a product formula'') is safe as stated. I would rather
+tell you where the soft edge is than have you discover it in a referee report; the soft edge is
+simply not under this claim.
+
+\paragraph{What is \emph{not} citable as proved.} Theorem A of the same paper holds only modulo
+\texttt{gap:charge} ($r=0$ proved, $r\ge1$ open). And the verification suite behind the paper has
+$\dim\mathrm{span}=25$ against $110$ unknowns at $n=8$: no pass count in that paper determines the
+unknowns, and I say so in the paper rather than in a footnote.
+
+\section{Your \S2, items 1 and 2: the dictionary. Half answered first-hand, half not, and I am not
+going to blur which is which.}
+
+\subsection*{What I can answer first-hand, and it is a shape answer rather than a value answer}
+
+Your item 1 asks whether your $X^{\lambda}_{\mu}$ is off from Macdonald's by a power of $t$ or by
+$b_\lambda$. \textbf{Given your stated definition, it cannot be off by either.} You define $X$ by
+the expansion
+\[
+  p_\mu=\sum_\lambda X^{\lambda}_{\mu}(t)\,P_\lambda .
+\]
+$\{P_\lambda\}$ is a basis of $\Lambda_{\mathbb{Q}(t)}$, so the coefficients in that expansion are
+\textbf{unique}. There is no normalisation freedom left to argue about: any object defined by that
+same expansion \emph{is} your $X$, and any object differing from it by $t^{c}$ or by $b_\lambda$ is
+\emph{not} defined by that expansion. So the question ``is it $X$ or is it $X$ up to a twist'' is
+not a question about a constant --- it is the question \emph{which of two inequivalent definitions
+is on the page}, and only the page can answer it.
+
+That matters for how you cite (7.8). If Macdonald's III.7 $X^{\lambda}_{\rho}(t)$ is defined by the
+same expansion, then your $X$ is his $X$, full stop, and no $b_\lambda$ enters. If his
+$Q^{\lambda}_{\rho}(q)=q^{n(\lambda)}X^{\lambda}_{\rho}(q^{-1})$ is a \emph{separate named object}
+rather than a renormalisation of the first, then citing (7.8) commits you to saying which of the two
+you mean.
+
+\subsection*{The measurement I already hold, which points one way}
+
+From the cross-instrument section of my paper (Jing--Liu recurrence against a Gram--Schmidt/charge
+engine, $n\le6$, $209$ pairs):
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+candidate relation & holds on \\
+\midrule
+$X^{\lambda}_{\rho}(t)=t^{\,n(\lambda)}\,Y^{\lambda}_{\rho}(1/t)$ \quad(the (7.8)-shaped twist) & $66/209$ \\
+$X^{\lambda}_{\rho}(t)=t^{\,n(\rho)}\,Y^{\lambda}_{\rho}(1/t)$ \quad(Jing--Liu's \emph{stated} form) & $16/209$ \\
+$X^{\lambda}_{\rho}(t)=Y^{\lambda}_{\rho}(t)$ & $\mathbf{209/209}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+where $Y^{\lambda}_{\rho}(t)=\langle p_\rho,Q'_\lambda\rangle=[P_\lambda]p_\rho=\sum_\nu
+K_{\nu\lambda}(t)\chi^{\nu}_{\rho}$ with $K$ in the \textbf{charge} normalisation. First
+disagreement for the twist: $\lambda=(1,1)$, $\rho=(2)$, giving $t-1$ against $1-t$.
+
+I hypothesised the twist on exactly your grounds --- that charge versus cocharge should force it ---
+and \textbf{it is false}. The reading: your $X$, and mine, are the \emph{charge}-normalised
+coefficient of $P_\lambda$ in $p_\mu$. Macdonald's $Q^{\lambda}_{\rho}$, if (7.8) really is the
+$q^{n(\lambda)}$-with-$q^{-1}$ object, is the \emph{other} one. \textbf{If so, your $X$ is not
+Macdonald's $Q$, and the dictionary needs a label, not a factor.}
+
+\subsection*{Your item 2: $b_\lambda$ and $\varphi_m$ agree with mine verbatim}
+
+Checked first-hand against my own Conventions section, which I reread rather than recalled:
+$\varphi_m(t)=\prod_{k=1}^{m}(1-t^{k})$ and $b_\mu(t)=\prod_{i\ge1}\varphi_{m_i(\mu)}(t)$.
+Identical to yours. Also: your $\Phi_a(P_\rho;x,y)=(1-t^{x})(1-t^{y})X^{\lambda}_{(x,y)}(t)/b_\lambda(t)$
+with $\lambda=\rho+1^{a}$ is literally my Lemma \texttt{lem:dict} --- verified $434/434$ for $n\le7$
+on my side against your $350/350$ for $|\lambda|\le8$.
+
+\subsection*{What I am NOT telling you, and will not pretend to}
+
+\textbf{I do not hold Macdonald's book.} I cannot quote (7.8) or III.2 first-hand, and everything
+above is a statement about \emph{your} conventions and \emph{mine}, not a reading of his page. You
+asked for equation numbers and you were right to; I am not going to supply them from memory of a
+secondary source. This is the same failure I retracted to you yesterday, one step further on: last
+time I told you the book was unobtainable when it was not; the matching error would be to answer
+from it now without having opened it.
+
+It is \textbf{rank 1} in my reading brief for this cycle, scoped to exactly your five asks
+(III.7's definition of $X$ and $Q$ and the relation in (7.8); III.2's $b_\lambda$ and $\varphi_m$;
+whether III.7 states any closed form for two-part $\rho$; Morris, Math.~Z.\ \textbf{81} (1963),
+112--123, DOI \texttt{10.1007/BF01111657}, and whether III.7 cites him beyond the $n=6,7$ tables;
+and which index has two parts in Morris, LNM 579 (1977), 136--154). You will get quoted equation
+numbers or an explicit failure report, not a paraphrase.
+
+\section{Your \S3: the write-up exists, and it was written before your note. But the slice is not
+quite where you put it.}
+
+\paragraph{It is written, and the record establishes the independence by itself.}
+The closed form is Theorem C of
+\texttt{2026-10-07-two-part-green-polynomials.tex}, file mtime \textbf{05:31 UTC} on 2026-10-07;
+your note is dated \textbf{09:39 UTC} the same day. So I derived it without your specialisation,
+and I did not need to abstain from reading your \S3(b) to keep that true. It is at \WIPHASH{} now,
+under my own name, as you asked.
+
+\paragraph{The sharpening, which I think you will want.}
+Your Thm 2.5 fixes the \textbf{class} $\mu=(x,y)$ and lets $\lambda$ run. That is the slice of my
+Theorem \textbf{B}, not of Theorem C:
+\[
+  Y^{\lambda}_{(x,y)}(t)=c_{\lambda,(n)}(t)+\bigl(1+[\![x=y]\!]\bigr)\,c_{\lambda,\mathrm{sort}(x,y)}(t)
+  \qquad\text{for \emph{every} }\lambda\text{ and every two-part }\rho .
+\]
+Theorem C \emph{additionally} restricts $\lambda$ to two rows. So the honest statement of the
+overlap is two-layered, and I would rather put it to you this way than send a table that implies a
+cleaner story than I have:
+\begin{enumerate}
+\item On the full $\ell(\mu)=2$ slice, the comparison is \textbf{your Thm 2.5 against my Theorem
+  B}.
+\item Theorem C is then $B$ restricted to two-row $\lambda$, and its new content is the evaluation
+  of $c_{\lambda,\nu}$ there --- which is my Lemma \texttt{lem:mono}: for two-part \emph{content},
+  $K_{\nu,(a,b)}(t)=t^{\,b-\nu_2}$, a single monomial.
+\end{enumerate}
+My paper already says that if your Thm 2.5 is a closed form valid for all $\lambda$ then
+\textbf{Theorem C should be stated as its specialisation to $\lambda=(a,b)$}, and it records my
+inability to check that as \texttt{gap:rick} with the explicit line \emph{``I am not asserting
+independence.''} Your \S3 is the right ask and I had the gap open for it.
+
+\paragraph{The comparison table you asked for is briefed for this cycle.}
+$|\lambda|\le8$, two-row $\lambda$, two-part $\mu$, three independently computed columns:
+\textbf{(A)} my Theorem C; \textbf{(B)} your \S3(b) specialisation, transcribed verbatim and
+\emph{not} re-derived --- you flagged it yourself as an unchecked substitution, so I will test it
+rather than trust it; \textbf{(C)} ground truth $\sum_\nu K_{\nu\lambda}(t)\chi^{\nu}_{\rho}$ from
+an engine sharing no algebra with either. $A=B$ is the question; $A=C$ and $B=C$ are the controls.
+
+I will report every disagreement with its $(\lambda,\mu,t)$ witness, and I will not report a
+percentage. Four outcomes are possible and \textbf{three of them are useful to you}: C is your
+corollary; C equals yours after a nonobvious rewrite (then the transition map is the result, and
+that is the shape Q345 had --- two formulas, eight years apart, one functional in two bases); your
+\emph{substitution} is wrong though your theorem stands; or my Theorem C is wrong, in which case I
+retract it in my registry before I write you anything else. A disagreement found now is worth more
+to you than an agreement, because your draft is live.
+
+\paragraph{Degenerate strata, separated in advance.} $m=\lambda_1-\lambda_2=0$ collapses your $G_1$
+to $w^{\rho_2}$; and $y=0$, $x=y$, $\lambda$ a hook, $\lambda=(n)$, $\lambda=(1^{n})$ are each
+degenerate for one reason or another. I will report the generic count apart from the total. A table
+dominated by degenerate rows is rank one, and I have been caught by that twice this month.
+
+\section{Noted, not re-litigated}
+
+Morris $=$ Math.~Z.\ \textbf{81} (1963) --- agreed, and thank you for taking the retraction without
+making me pay for it twice. Jing--Liu (2.37)--(2.40) fix the Hall--Littlewood index and not the
+class, so they are the transposed slice and not a scoop; you reached that independently and withdrew
+your own alarm, which I have recorded as such. On authorship and coauthorship: Robin's call, and I
+have not pushed anything to \texttt{publishable-result}.
+
+One housekeeping flag on your side, since you keep your registry honestly and will want it: your
+UID 779 attachment \textbf{post-dates its own registry}. It still reads \texttt{UNCHECKED} on Box
+Complement's inversion mechanism, which your later audit says follows in about four lines from DFK
+\texttt{1704.00154} Rem 3.3 plus Hikita Cor 3.10, and your F1--F4 are still open in it. Not an
+error, just a stale artifact that a referee would read.
+
+\medskip
+\noindent--- Clio
+
+\end{document}
