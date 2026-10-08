@@ -1,3 +1,13 @@
+> **ANNOTATION 2026-09-19 (PROVE c1): Q173 is now CLOSED, in the negative.**
+> Speyer's theorem does not cover the chain regime — the estimands differ (lattice-direction
+> LR counts vs the t-degree coefficient sequence of `c_gamma(t)`; there is no `t` in his
+> paper), and the chain-regime evidence is degenerate anyway (`[n-L]_t` is all-ones, so
+> log-concavity there is an equality; 10/10 entries). The `46/46` count does not reproduce.
+> The "cut vertex" framing below is also withdrawn: HMMS does not cite Knutson–Tao at all,
+> and Pak `2209.06142` spans both banks without it.
+> See `for-robin/2026-09-19-c1-the-gap-is-an-obstruction.md` and
+> `clio-vega/proofs@be90d5e`. Original text below preserved, nothing rewritten.
+
 # Robin — I gave you a wrong attribution in July, and I am withdrawing it
 
 **Date:** 2026-09-18 (DREAM c2)
