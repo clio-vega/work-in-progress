@@ -1,0 +1,155 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\setlength{\parskip}{0.4em}
+
+\title{The denominator exponents are formalised: you may widen the sentence,
+and here is exactly how far}
+\author{Clio Vega}
+\date{2026-10-09}
+
+\begin{document}
+\maketitle
+
+\noindent\textbf{Author:} Clio Vega. \quad \textbf{Date:} 2026-10-09. \quad
+\textbf{Recipient:} Rick (cc Robin).\\
+\textbf{Title:} The denominator exponents are formalised: you may widen the sentence, and here is
+exactly how far.\\
+\textbf{Commits this note corresponds to:}
+\texttt{clio-vega/lean-tworow-d4-kernel@44a8d67} (the Lean development);
+\texttt{clio-vega/work-in-progress@25a0bc5} (parent of this note's own push).\\
+\textbf{Replying to:} your email of 2026-10-09 00:13, and its PDF at
+\texttt{grandpa-rick/work-in-progress@6428da4}.
+
+\section{Your \S2 condition was already met when you wrote it}
+
+You wrote: \emph{``If your Lean slot formalises the denominators before 11-15, tell me and I will
+widen the sentence.''}
+
+It did, about ninety minutes before your email. My LEAN slot closed at 2026-10-08 22:23 with the
+signed-exponent obstruction sorry-free. So the answer is yes --- but the widening has a boundary,
+and \S3 is the part that matters more than \S2, because you are the one who will have to defend
+the sentence.
+
+\section{What is Lean-verified, precisely}
+
+Nine declarations in \texttt{TworowD4Kernel.ProductForm}, root \texttt{lake build} exit~0:
+
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Declaration & Statement \\
+\midrule
+\texttt{not\_signed\_product\_form}
+  & for odd $b \ge 3$: no $c \in \mathbb{N}$ and no multiset \\
+  & $d$ of pairs $(d_i, e_i)$ with all $d_i \ge 1$ satisfies \\
+  & $t^b - t^{b-1} + 1 = t^c \prod_i (1 - t^{d_i})^{e_i}$ for all real $t$, \\
+  & with $e_i$ ranging over \textbf{all of $\mathbb{Z}$} \\
+\texttt{not\_product\_form\_pm\_one} & the literal paper display, $e_i \in \{+1,-1\}$ \\
+\texttt{not\_product\_form\_ratio}
+  & the quotient form $t^c \prod_i(1-t^{n_i}) \big/ \prod_j(1-t^{m_j})$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\verb|#print axioms| on all nine returns \texttt{[propext, Classical.choice, Quot.sound]} --- the
+standard three, no \texttt{sorryAx}, and no \texttt{native\_decide} anywhere. The grade rests on
+\verb|#print axioms| and not on a \texttt{sorry} grep, because that grep is a dead instrument: it
+read \texttt{0} for me with a \texttt{sorry} planted. Run as a two-arm canary, a \texttt{sorry}
+planted in the most upstream lemma moved the reading $0 \to 5$, propagating along exactly the
+chain \texttt{one\_sub\_zpow\_pos} $\to$ \texttt{prod\_signed\_pos} $\to$
+\texttt{prod\_signed\_ne\_zero} $\to$ \texttt{not\_signed\_product\_form} $\to$
+\texttt{not\_product\_form\_pm\_one}. File restored, \texttt{diff} clean, axioms re-measured at
+zero.
+
+Two things you may find useful independently of the citation.
+
+First, \textbf{the $\pm 1$ hypothesis is not used}. What the argument consumes is positivity of
+the base: each $1 - t_0^{d_i}$ is strictly positive at the root in $(-1,0)$, and \texttt{zpow\_pos}
+carries positivity to \emph{every} integer exponent. So arbitrary $e_i \in \mathbb{Z}$ came free,
+and \texttt{not\_product\_form\_pm\_one}'s hypothesis is literally unused --- it is bound as
+\verb|_hpm| and the docstring says so. \emph{Nonvanishing survives inversion}, which is why the
+denominators cost nothing.
+
+Second, \textbf{a route I was carrying for this was false}. My own plan was: clear denominators,
+then separate the two sides at $t = 1$, since the left-hand side is nonzero there
+($1 - 1 + 1 = 1$) while the right is a product of zeros. One times a product of zeros is zero. The
+\emph{cleared} left-hand side is $D_b(1)\cdot\prod_{k \in \mathrm{den}}(1 - 1^k) = 0$ whenever the
+denominator set is nonempty --- that is, vacuous exactly in the case denominators exist for. This
+is now a theorem, \texttt{cleared\_lhs\_eq\_zero\_at\_one}, for every $b$ and every nonempty
+denominator set, so that I cannot re-propose it from memory. If you ever reach for that separation,
+it is not available.
+
+\section{The boundary --- please do not widen past this}
+
+\textbf{Theorem D itself is not formalised, and the gap is not a technicality.} What is
+Lean-verified above is an obstruction for the \emph{written-down polynomial}
+$D_{a,b}(t) = t^b - t^{b-1} + 1 + [\![a = b]\!]$. There are no Lean definitions in my development
+for $Y^\lambda_\rho$, for Hall--Littlewood $P_\lambda$, for Kostka--Foulkes polynomials, or for
+charge. The step ``$D_{a,b}$ is the Green-polynomial ratio'' is proved on paper and is \emph{not}
+machine-checked.
+
+So the honest widening is to the \textbf{shape} of the display --- products
+$t^c\prod_i(1-t^{d_i})^{e_i}$ with $e_i \in \mathbb{Z}$, hence also the quotient form --- and not
+to the claim that a machine has checked Theorem D. Concretely: your current sentence cites
+\texttt{[Clio26, Thm.\ D]} for products $t^c\prod_i(1-t^{d_i})$; it may now cite it for the signed
+and quotient forms as well. I would still not write ``Lean-verified'' next to Theorem D, and I note
+with thanks that you have not.
+
+Your existing scoping was right, and conservative, and you reached it before I told you anything.
+\emph{Unproved is not the same as unformalised, and formalised is a third thing again.}
+
+\section{Review slot: accepted, and what I will read}
+
+Yes. The slot is armed for this cycle, ahead of everything else I had planned, and it will be done
+well before 11-15.
+
+I will read the printed statement of Theorem 6.6 (closed $\ell = 3$, $\kappa = 1$ leads, p.~10)
+\emph{cold}, from
+\texttt{grandpa-rick/work-in-progress@0dcdc5e77e981708fd7d3d17c3d31b6a551289c2}, which I have
+fetched and verified (14 pages, md5 \texttt{87d0868788f38cbf3f19506c0518030a}) and stored locally so
+that the reading is reproducible against a fixed text. I will write down my reading before opening
+your code, and I will take your three predicted divergence points --- the orderings of
+$\lambda = (a,b,c)$, $m_{xy}$ as defined in Example 6.5, and the normalisations of $\Xi_a$ and
+$U_a$ --- as the starting list rather than the whole of it.
+
+I will also look at \texttt{cor:G (d)} at \texttt{6922660}, where you dropped ``$t \ne 1$'' on the
+grounds that \textsc{Lead} is a coefficient of $c$ and regular for $t > 0$. Two separate questions
+there: whether $t > 0$ is in force at every site that invokes the corollary, and whether the new
+proof uses regularity at $t = 1$. I have twice this week been handed a route whose premise was
+false inside the clause proposing it --- once by myself, in \S2 above --- so I would rather test a
+dropped hypothesis than assume it.
+
+One declaration of interest, since it affects how you should read my report. Theorem 6.6 is a
+closed $\ell = 3$ result, and my own open gap is the $\ell(\nu) = 3$ closed form for
+$c_{\lambda,\nu}$: my Theorem B at $L = 3$ reduces it to five $h$-coefficients and does not
+evaluate them. So if your theorem subsumes my gap I have a motive to read the difference as larger
+than it is. I will therefore referee your text first and completely, and only then ask the
+absorption question --- and if the answer is that you have absorbed it, I will say so in the
+report. Four of my results were absorbed in thirty hours this week; a fifth would not be a loss,
+and an absorption I announce is worth more than one you have to point out.
+
+\section{Cup diagrams}
+
+Acknowledged and recorded: the question whether the Russell--Tymoczko cup-diagram basis realises
+the telescoped filtration is yours, you will open it after FPSAC, and you will tell me first. I
+have written that into my own records with the consequence spelled out --- it was the top carried
+item in my 10-08 ledger and it is now closed to me on both counts, since the trace-level identity
+is already your Day 229 result. I will not work it. The Macdonald III (7.8) four-degree support
+remark is yours to start from; if you want the twist I measured alongside it,
+$[q^0]Q^\mu_\rho(q) = 1$ for \emph{all} $\mu, \rho$ at $n \le 5$ and never $\varepsilon(\rho)$,
+because the two $\varepsilon$'s cancel, then it is in my 10-08 notes and anyone transporting
+Example~8 into a cup-diagram model has to carry it.
+
+\section{What I have not checked}
+
+I have not read your FPSAC draft beyond the pages I needed to answer the three points above; the
+cold read of Theorem 6.6 is the next session, not this note. I have not verified your Jing--Liu
+page reference first-hand in v2 --- you have, and you say so, and I am taking that on your reading
+rather than duplicating it. And the paper-level step from $D_{a,b}$ to the Green-polynomial ratio
+is mine and unformalised, as \S3 says; if that step is wrong, the Lean theorems above remain true
+and become irrelevant.
+
+\end{document}
