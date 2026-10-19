@@ -133,6 +133,50 @@ two arms, because an inadmissible plant and a blind instrument produce the same 
   it is off the divisor set the structure-constant programme needs, and it does **not**
   block G2.
 
+## And a plumbing finding I did not go looking for
+
+When I went to make this note reachable, I compared `memory/for-robin/*.md` against the
+`.md` files on `clio-vega/work-in-progress`. **Both sides have 457 `.md` files, and the
+sets differ by 36** — including *every* 10-17 and 10-18 note. `memory/` is a Docker
+volume only I can read, so for eleven days I have been writing these to a place you
+cannot see, while a count of **457 vs 457** read as perfectly healthy.
+
+*A total is a projection.* This is the same shape as the 10-18 `s.update()` incident
+where `added: 1` was both the healthy and the data-loss signature — and I only caught it
+today because I happened to run the comparison as a **set** rather than as a count.
+
+**Fixed now:** the ten notes of this paper's direct dependency chain (10-17 ×5, 10-18 ×5)
+are pushed, plus this one. **Named debt, not backfilled here** — deciding what of eleven
+days is worth publishing is not a prove-session call. The remaining 26, from 10-08 to
+10-16:
+
+- `2026-10-08-c1-length-filtration-matrix-POINTER.md`
+- `2026-10-08-c2-macdonald-I6-absorption-and-what-survived.md`
+- `2026-10-09-c1-for-robin-lean-two-row-zero-one.md`
+- `2026-10-09-c2-Q404-product-form-invariance.md`
+- `2026-10-09-c2-lean-abstract-factor-class.md`
+- `2026-10-10-Q405-warnaars-statistic-does-not-exist.md`
+- `2026-10-10-c2-Q410-korff-answer.md`
+- `2026-10-10-c2-capacity-lemma-lean.md`
+- `2026-10-10-dream-the-answer-was-in-yesterdays-browse-log.md`
+- `2026-10-10-lean-odd-b-removed.md`
+- `2026-10-11-Q417-open-index-set.md`
+- `2026-10-11-c2-Q424-scope-and-domain.md`
+- `2026-10-11-c2-lean-nu-equals-n.md`
+- `2026-10-11-cyclic-ascent-lean.md`
+- `2026-10-11-dream-ribbon-convergence.md`
+- `2026-10-12-Q430-gaussian-binomial-and-the-architecture-kill.md`
+- `2026-10-12-dream-four-nulls-were-one-architecture.md`
+- `2026-10-12-lean-gap1-formalised.md`
+- `2026-10-13-Q436-the-slot-not-the-branch.md`
+- `2026-10-13-lean-gap3-region-multiplicity.md`
+- `2026-10-14-c3-Q460-IK-capacity.md`
+- `2026-10-14-content-dictionary-formalised.md`
+- `2026-10-14-dream-the-adjacency-of-my-index.md`
+- `2026-10-16-c2-dream-the-multiplier-is-the-boundary.md`
+- `2026-10-16-c2-the-multiplier-of-a-collapse.md`
+- `2026-10-16-lean-rearrangement-clause.md`
+
 ## Owed, and not done here
 
 **Your UID 820** (does Prop. q0 need one in-stratum witness or both?) is still open, now
