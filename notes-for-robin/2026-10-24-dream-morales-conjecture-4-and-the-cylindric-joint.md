@@ -112,3 +112,54 @@ I'd rather you heard the demotion from me than inherited the overclaim.
 `2608.13544` are **IDs held, unread** — graded accordingly in `reading/sources.json`. Full
 write-ups: `memory/connections/2026-10-24-cylindric-is-the-unglued-joint.md` and
 `memory/connections/2026-10-24-four-gluings-and-the-received-answer-is-polyhedral.md`.*
+
+---
+
+## Addendum, same night (second consolidation pass) — the correction above was LATE, and its provenance line has an error
+
+Two things I owe you on top of the demotion.
+
+**1. A factual correction to my own provenance line.** It says `2601.05007` (Speyer, *skeps*) is
+an **ID held, unread**. It is not — `reading/sources.json` grades it **`verified-quote`**. The
+error is in the conservative direction, but it is wrong and it is in a document I pushed you.
+
+**2. The demotion was derivable from my own notes twenty hours earlier, and I missed it.** I told
+you above that the catalogue showed me the received answer. Half true. What actually happened:
+
+On **10-23 c1** I wrote — my words — *"MO 38665's four-way collapse (**Pak–Vallejo** ≡
+Danilov–Koshevoy ≡ Henriques–Kamnitzer) is the **combinatorial shadow** of this; `0707.2248` is
+the **algebraic statement**."* That made Pak–Vallejo **row 6** of my chain table, enrolled as
+*evidence for* the integrability thesis.
+
+On **10-23 c2** I deep-read `0707.2248` (Kamnitzer–Tingley) and **refuted row 2**, the link that
+said the commutor identifies the competing interpretations: `interpretation` **0**, `bijection`
+**0**, `multiplicit` **0**, against seven positive controls firing in the same invocation. The
+commutor swaps two tensor factors inside *one* model and never touches multiplicity spaces.
+**I appended that correction as a footer and left the table standing.**
+
+Row 6 only ever reached integrability *through* row 2. With row 2 refuted, row 6 is a collapse of
+polyhedral and crystal gluings with no R-matrix in it — **it is the rival hypothesis, and it had
+been sitting in my own crown-jewel table the whole time.** So the honest diagnosis is not the one
+I gave you (*"the field's consensus is phrased in words I don't search"*). Keyword blindness did
+not hide Pak–Vallejo. **Its role did.** A chain table has a column for `source` and one for
+`grade`; it has no column for `rival`.
+
+⇒ the rule I'm banking, which may be the more useful thing in this note:
+**a correction appended to a document does not re-grade the document's own table.** When a link
+in a chain falls, every row that routed through it changes *role* — and no validator I own grades
+a role. A grade certifies a source; nothing certifies what the source is *doing* in the argument.
+
+**What it does to the thesis.** Zinn-Justin 2008 stands: the R-matrix computes the **coefficient**
+— a statement about a *number*. The gluing claim needs an R-matrix acting on the **multiplicity
+space**, and row 2 was the only link that claimed it. The rest of the branch (`1708.05105`,
+`2502.05732`, `2001.02262`) is `agent-summary`, unread. So gluing #4 has **zero first-hand support
+for the one property that makes it a gluing** rather than another model — while `[PV05]`,
+`2601.05007` and `2501.01947` each state theirs in their own abstract.
+
+Not refuted. **Relocated:** it is a conjecture I like, not a reading of the literature. I've added
+**Q583** (*has any source I have actually read put an R-matrix on a multiplicity space?* — a
+grading sweep, not a reading task) as a **precondition** for the spectral-parameter test I
+promised you, because that contest can't be scored while one side has no read source for its
+central property.
+
+*Full write-up: `memory/connections/2026-10-24-c2-the-shadow-outlived-the-object.md`.*
