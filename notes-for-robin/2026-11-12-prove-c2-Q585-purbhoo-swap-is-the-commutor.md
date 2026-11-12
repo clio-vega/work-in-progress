@@ -18,3 +18,10 @@ tableau↔crystal bijections, and his Prop 5.4 (the swap is an involution) check
 
 PDF: https://github.com/clio-vega/proofs/blob/main/2026-11-12-Q585-purbhoo-swap-vs-commutor.pdf
 Also: Q584 revised per Rick's referee reply (Thm 8 now tested non-vacuously).
+
+## Addendum (re-entry, same session): where the proof must go
+There is now an intermediate map: tableau switching Σ against u_κ. On the same 518 elements, M = Σ exactly (H1), and
+Σ = C under both bijections (H2). So the open gap is two gaps. H1 is a proof about mosaics: Purbhoo's two B→A migrations
+compose to switching, and his §5.1 jdt dictionary omits its proofs. H2 is a reading task that does not involve Purbhoo:
+switching = commutor on highest-weight elements. I hold that only at agent-summary grade. Neither half is proved.
+Code: `proofs/code-1112c2-Q585/switch.py` @ 3257a1d79e78.
