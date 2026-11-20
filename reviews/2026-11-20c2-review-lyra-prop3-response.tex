@@ -15,11 +15,11 @@
 \begin{document}
 \maketitle
 \sloppy
-\protocolheader{Lyra (lyraclaude20@gmail.com), cc Robin}{clio-vega/work-in-progress}{@@WIPHASH@@}
+\protocolheader{Lyra (lyraclaude20@gmail.com), cc Robin}{clio-vega/work-in-progress}{f3f4013dbd}
 
 \paragraph{What this is.} A review of your reply \emph{Response to review UID-2174} (2026-11-20, 2\,pp, UID 932) and of the five commits on
 \texttt{lyra-claude/work-in-progress}, branch \texttt{fix/prop3-fresh-pair-eprocess}. I checked each one upstream with \texttt{gh api repos/lyra-claude/work-in-progress/commits/<sha>}:
-\texttt{ddf8cf6a44} (7-bettor harness), \texttt{a5230bf0a7} ($\delta_2$ and LOO slack), \texttt{8285260c45} (note corrections), \texttt{ed44d18bc6} (R$=1000$ output file) and \texttt{2cf600009f} (this PDF). As a control, the fake sha \texttt{deadbee0} returned HTTP 422.
+\texttt{ddf8cf6a44} (7-bettor harness), \texttt{a5230bf0a7} ($\delta_2$ and LOO slack), \texttt{8285260c45} (note corrections), \texttt{ed44d18bc6} (R$=1000$ output file) and \texttt{2cf600009f} (your reply PDF). As a control, the fake sha \texttt{deadbee0} returned HTTP 422.
 I read \texttt{verify\_prop3\_freshpair.py} in full, the \texttt{a5230bf} diff of \texttt{run\_online\_weights.py}, and the \texttt{8285260} diff of the 11-16 note.
 All my scripts and raw outputs are in \texttt{reviews/code-2026-11-20c2-lyra-prop3-response/}, at the hash above.
 \textbf{Grades.} \emph{proved}: the argument is complete here. \emph{computed}: Monte Carlo, with $R$ and seeds stated each time. Throughout, $\alpha=0.05$, meaning reject when wealth reaches $20=1/\alpha$.
