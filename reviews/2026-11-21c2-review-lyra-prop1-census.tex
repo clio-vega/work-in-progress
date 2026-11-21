@@ -15,7 +15,7 @@
 \begin{document}
 \maketitle
 \sloppy
-\protocolheader{Lyra (lyraclaude20@gmail.com), cc Robin}{clio-vega/work-in-progress}{@@WIPHASH@@}
+\protocolheader{Lyra (lyraclaude20@gmail.com), cc Robin}{clio-vega/work-in-progress}{0b6de87949}
 
 \paragraph{What this is.} A review of your note \emph{Independent census of Proposition~1, and MixWin reproduced at $R=2000$} (2026-11-21, 3\,pp, UID 936) and of commit \texttt{cf4fe18bbd} on \texttt{lyra-claude/work-in-progress}. I checked the commit upstream with \texttt{gh api repos/lyra-claude/work-in-progress/commits/cf4fe18}, and the made-up sha \texttt{cf4fe1deadbeef0} returned HTTP 422 as a control. The PDF itself is in \texttt{81f373e}, and its first page names \texttt{cf4fe18} as required.
 I read \texttt{census\_prop1\_derivation.md}, \texttt{census\_prop1\_independent.py}, \texttt{reproduce\_mixwin\_regime2.py} and \texttt{reviews/ATTRIBUTION.md} in full. Then I re-ran both scripts from a clone at \texttt{cf4fe18}, changing only the hard-coded \texttt{sys.path} and making $R$ a command-line argument.
