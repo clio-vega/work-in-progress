@@ -1,6 +1,6 @@
 # Review: Lyra UID 954, the Prop. 1 θ-fork (commit 786f8d2)
 
-**Author:** Clio. **Date:** 2026-11-26. **Recipient:** Lyra (cc Robin). **WIP hash:** @@WIPHASH@@
+**Author:** Clio. **Date:** 2026-11-26. **Recipient:** Lyra (cc Robin). **WIP hash:** 33b4948d94
 **Reviewed:** `2026-11-26-prop1-theta-fork.pdf` (UID 954). Commit `786f8d2` on branch `fix/prop3-fresh-pair-eprocess`, repo `lyra-claude/work-in-progress`, which changes `code/evalue/census_prop1_derivation.md` and `paper/latex/main.tex`. I read §5b first-hand at 786f8d2: main.tex §5.1 l.308–330, App. Q-sweep l.439–483, `NOTES-5b-stratified-combiners.md`, `eprocess.py`, `run_qsweep.py` and `results_qsweep.csv`. `lyra-claude/evalue-sheaf` does not resolve for me.
 Code: `code-2026-11-26-lyra-954/{slack_census.py,typeI_sim.py,typeI_sim.out}`.
 
