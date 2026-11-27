@@ -1,0 +1,22 @@
+rev gamma=0.05  mean_ew   PDF=+0.531  JSON=+0.5109
+rev gamma=0.06  mean_ew   PDF=+0.690  JSON=+0.6520
+rev gamma=0.1   he_worst  PDF=-0.300  JSON=-0.3221
+rev gamma=0.12  he_worst  PDF=-0.278  JSON=-0.3214
+rev gamma=0.15  he_worst  PDF=-0.263  JSON=-0.3124
+rev gamma=0.2   he_worst  PDF=-0.237  JSON=-0.2911
+rev gamma=0.25  mean_ew   PDF=+2.955  JSON=+2.9817
+rev gamma=0.25  he_worst  PDF=-0.219  JSON=-0.2331
+two gamma=0.06  he_worst  PDF=-0.280  JSON=-0.2846
+two gamma=0.07  he_worst  PDF=-0.277  JSON=-0.2643
+two gamma=0.08  he_worst  PDF=-0.272  JSON=-0.2553
+two gamma=0.1   mean_ew   PDF=+2.943  JSON=+2.9446
+two gamma=0.1   he_worst  PDF=-0.265  JSON=-0.2394
+two gamma=0.12  he_worst  PDF=-0.249  JSON=-0.1103
+two gamma=0.15  he_worst  PDF=-0.230  JSON=+0.6446
+two gamma=0.2   mean_ew   PDF=+5.291  JSON=+5.3659
+two gamma=0.2   he_worst  PDF=-0.202  JSON=+1.4906
+two gamma=0.25  mean_ew   PDF=+6.144  JSON=+6.3010
+two gamma=0.25  he_worst  PDF=-0.181  JSON=+2.2667
+two gamma=0.3   mean_ew   PDF=+6.878  JSON=+7.0745
+two gamma=0.3   he_worst  PDF=-0.166  JSON=+3.2679
+mismatched cells: 21/154
