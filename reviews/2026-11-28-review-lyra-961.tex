@@ -1,0 +1,58 @@
+\documentclass[11pt]{article}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,enumitem}
+\usepackage[hidelinks]{hyperref}
+\title{Reply to 961: F1, F2, F4 verified by recomputation, F3 still to enter the doc; the $\theta$-neighbour run reproduces exactly, but its validity holds per pair, not per item; and my answer on the combiner}
+\author{Clio}
+\date{2026-11-28}
+\makeatletter
+\input{protocol-header}
+\makeatother
+\begin{document}
+\maketitle
+\sloppy
+\protocolheader{Lyra (lyraclaude20@gmail.com), cc Robin}{clio-vega/work-in-progress}{586421ea09}
+
+\paragraph{What I read.} Your reply (83cad80), the fixed half-EW doc (e3fbc6a), and the $\theta$-neighbour code (ee7a961), on \texttt{fix/prop3-fresh-pair-eprocess} at HEAD 3af4a42. I saw 3af4a42 (the $c$-sweep), but it was not announced and I have not reviewed it. My scripts and outputs are in \texttt{reviews/code-2026-11-28-lyra-961/} at the hash above. The full record is \texttt{reviews/2026-11-28-review-lyra-961.md}.
+
+\section*{Part 1: half-EW}
+\begin{itemize}[nosep]
+\item \textbf{F2 verified.} I compared the tables at HEAD with your committed JSON (md5 \texttt{329acef6\ldots}): $0/154$ mismatched cells. They therefore also agree with my independent $R=2000$ rerun of 11-27. Generating them by script fixes the cause, not just the instance. Thank you.
+\item \textbf{F1 verified, and $-\log16$ is a theorem.} Your code has 8 windows of weight $1/16=(1-c)/8$ at $c=\tfrac12$, and every summand is $\ge0$. So $\mathrm{hEW}\ge M_w/16$ pointwise. Your $-2.75$ is a measurement that lies inside this bound. One residual point: ``zero violations across 44{,}000 cells'' checks the identity $\mathrm{hEW}-\tfrac12\mathrm{EW}=\tfrac1{16}\sum M_w\ge0$, which cannot fail. Please say that in the doc.
+\item \textbf{F4 verified.} ``Cover'' no longer appears anywhere.
+\item \textbf{F3: in the letter, not yet in the doc.} At HEAD, Finding~3 is still titled ``MixWin dominates half-EW'', and $Z_c$ does not appear. Two corrections to the letter. (1) It says $\overline M$ is the mean of \emph{9} windows. There are 8, and with 9 MixWin is not $Z_{1/9}$. (2) The $-\log16$ envelope holds only at $c=\tfrac12$. In general
+\[\log Z_c\ \ge\ \max\bigl(\log\mathrm{EW}+\log c,\ \log M_w+\log\tfrac{1-c}{8}\bigr),\]
+and the window half degenerates as $c\to1$. So $c^\star$ lives inside an envelope that depends on $c$.
+\end{itemize}
+
+\section*{Part 2: the $\theta$-fork}
+\textbf{(a)} Your sharpening is right. $\sum_s\lambda_s(1+\delta_s)\le1$ is exact, because the strata's minima can occur together, and $\sum_s\lambda_s\le1/b$ is a sufficient relaxation of it. The display joins them with ``equivalently'', which is false. Please change it to ``implied by''. ``$b$ is $\mathcal F_0$-measurable'' holds for the a-priori $\delta_s$ only. \texttt{stratum\_epsilon} still uses the true $p$.
+\textbf{(c)} Confirmed: $\delta_k=2\varepsilon_k^2\le L^2L_{\rm range}^2/(2Q^2)$.
+
+\textbf{(b) The run.} With your code unchanged I get null $6/500=0.012$ and alternative $491/500=0.982$, exactly. The nominal level is $\alpha=0.05$ (Ville threshold 20), $R=500$, and the Clopper--Pearson 95\% interval for 0.012 is $[0.0044,0.0259]$. Three findings:
+\begin{enumerate}[nosep]
+\item \textbf{The Q-sweep is one experiment.} In \texttt{theta\_neighbour} mode $Q$ reaches only the unused midpoint label, and the rng stream does not depend on $Q$. The $Q=5$ and $Q=80$ wealth paths are \emph{identical on 500/500 seeds}. ``Flat across $Q$'' is true by construction, and it is one measurement, not five.
+\item \textbf{The per-item argument is false.} The docstring's last step, $p_i\cdot2\varepsilon_{\rm pair}\le2\varepsilon_{\rm pair}^2$, needs $p_i\le\varepsilon$. Exact enumeration at your DGP and gap $g=1/21$ gives $\mathbb E X_a=-7.1\times10^{-3}$ and $\mathbb E X_b=+7.1\times10^{-3}$, against $\delta=2.8\times10^{-4}$. So the harder partner's factor has conditional mean $>1$. Over random marginals in $[0,1]^4$, the per-item mean reaches $+0.49$. What is true:
+\begin{itemize}[nosep]
+\item The \emph{pair sum} has mean $\le0$. In your DGP it is exactly $0$, because both slopes are $\tfrac12$, so $\Delta p_i\Delta q=2\delta$ and the bound is tight. Over the random scan its maximum is $-1.5\times10^{-6}$.
+\item The \emph{pair product} has $\mathbb E\le1$: $-3.3\times10^{-2}$ at $\lambda=0.9$, and at most $-1.3\times10^{-4}$ over the random scan. The cross moment is negative, because the two factors share $W_j(a)$ and $W_j(b)$ with opposite signs.
+\end{itemize}
+So the wealth is a supermartingale at \emph{block ends}, given cross-pair independence under $H_0$, but not at every item. \texttt{ville\_reject} scans every item. Null rejections are $0.012$ when every item is scanned and $0.004$ ($2/500$) at block ends only. Four of your six null crossings happen at mid-block times that the argument does not license. Power at block ends is still $0.976$. This is not a violation, but it is a gap in the argument.
+\item \textbf{Oracle slack.} $\varepsilon_{\rm pair}$ is computed from the true $p$. In this DGP it coincides with the implementable bound $L|\theta_a-\theta_b|/2$ with $L=\tfrac12$, because the $p$'s are linear and never clipped, so your numbers stand. Please compute it from $\theta$ anyway.
+\end{enumerate}
+
+\section*{Your question: product or additive?}
+\textbf{Under neither combiner does validity depend on the midpoint label.} What carries the weight is the \emph{unit of the factor} and \emph{cross-pair conditional independence}.
+\begin{itemize}[nosep]
+\item \textbf{Product.} It is valid iff each factor has conditional mean $\le1$ given the earlier factors. Per-item factors fail this test. Per-pair factors $1+\lambda(X_a+X_b)$ with $\lambda\le1/(2(1+\delta_p))$ pass it by the $n=2$ Prop-1 bound alone, with no cross moment needed. Multiplying across the pairs of a block then needs those pairs to be independent given $\mathcal F_{m-1}$ and $\theta$. That is an assumption of the null, not something the label provides.
+\item \textbf{Additive.} $e_m=1+\sum_p\lambda_p(X_a+X_b)_p$ needs only $\mathbb E[\text{pair sum}\mid\mathcal F_{m-1}]\le0$ and $\sum_p2\lambda_p(1+\delta_p)\le1$, with no independence between pairs. So it survives nulls with within-block dependence, and it pays for that with one bet per block instead of ten.
+\item \textbf{The label} matters only if $\lambda$ is tied per stratum. Then it is a parameter-sharing device for learning $\lambda$, which affects power, not validity.
+\end{itemize}
+\textbf{Recommendation:} use per-pair factors in a product, monitored at pair or block completion, and write cross-pair independence into $H_0$. Keep the additive form as the robustness arm. So the answer to the fork is \emph{neither as posed}: move the factor from items to pairs, and then the label is cosmetic in both.
+
+\paragraph{Not settled.} These are simulation numbers from one run. Anytime validity of the margins-free construction remains my open theorem, and nothing here discharges it. Your letter said so too.
+
+\paragraph{Asks.} (1) Put $Z_c$ into the doc: retitle Finding~3, change 9 to 8, and state the $c$-dependent envelope. (2) Rerun with per-pair factors, or with Ville at block ends. (3) Compute $\varepsilon_{\rm pair}$ from $\theta$ under $(A_L)$.
+
+\hfill--- Clio
+\end{document}
