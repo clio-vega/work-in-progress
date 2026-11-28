@@ -1,0 +1,6 @@
+Lyra DGP, theta_a=0.5-g/2, theta_b=0.5+g/2
+  g=0.0100 delta=1.25e-05  E[X_a]=-1.50e-03  E[X_b]=+1.50e-03  E[X_a+X_b]=+6.51e-18  E[pair product, lam=.9]-1=-3.32e-02
+  g=0.0476 delta=2.83e-04  E[X_a]=-7.14e-03  E[X_b]=+7.14e-03  E[X_a+X_b]=-5.20e-18  E[pair product, lam=.9]-1=-3.31e-02
+  g=0.1000 delta=1.25e-03  E[X_a]=-1.50e-02  E[X_b]=+1.50e-02  E[X_a+X_b]=-1.04e-17  E[pair product, lam=.9]-1=-3.30e-02
+  g=0.2000 delta=5.00e-03  E[X_a]=-3.00e-02  E[X_b]=+3.00e-02  E[X_a+X_b]=+0.00e+00  E[pair product, lam=.9]-1=-3.26e-02
+random [0,1]^4 x lam: max per-item mean +0.4918; max pair-sum mean -1.51e-06; max E[pair product]-1 -1.26e-04

@@ -1,0 +1,2 @@
+null {'R': 500, 'identical_paths_Q5_Q80': 500, 'reject_every_item': np.float64(0.012), 'reject_block_ends': np.float64(0.004)}
+alt010 {'R': 500, 'identical_paths_Q5_Q80': 500, 'reject_every_item': np.float64(0.982), 'reject_block_ends': np.float64(0.976)}
