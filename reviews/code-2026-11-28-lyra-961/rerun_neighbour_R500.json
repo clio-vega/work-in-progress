@@ -1,0 +1,14 @@
+{
+  "null": {
+    "R": 500,
+    "identical_paths_Q5_Q80": 500,
+    "reject_every_item": 0.012,
+    "reject_block_ends": 0.004
+  },
+  "alt010": {
+    "R": 500,
+    "identical_paths_Q5_Q80": 500,
+    "reject_every_item": 0.982,
+    "reject_block_ends": 0.976
+  }
+}
